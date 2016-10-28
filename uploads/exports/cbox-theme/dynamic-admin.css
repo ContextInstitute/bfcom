@@ -1,0 +1,146 @@
+
+div.icext-section.icext-default > div.ice-title {
+	margin: 0 0 12px 0;
+	padding: 5px 10px;
+}
+div.icext-section.icext-default > div.ice-content {
+	border: none;
+	background: transparent;
+}
+
+div.icext-widget.icext-debugger div.ui-widget-header {
+	padding: 3px 6px;
+}
+div.icext-widget.icext-debugger div.ui-widget-content {
+	padding: 10px;
+}
+div.icext-widget.icext-debugger div.ui-widget-content ul {
+	margin-left: 10px;
+	list-style: disc;
+}
+	div.icext-widget.icext-debugger div.ui-widget-content ul li a {
+		min-width: 150px;
+		padding: 2px 6px;
+	}
+
+div.icext-widget.icext-posts-list {
+	width: 700px;
+}
+div.icext-widget.icext-posts-list div.ui-widget-header a {
+	float: right;
+	font-size: 11px;
+}
+div.icext-widget.icext-posts-list div.ui-widget-header,
+div.icext-widget.icext-posts-list div.ui-widget-content {
+	padding: .5em;
+}
+	div.icext-widget.icext-posts-list ul li {
+		margin: 5px 0px 5px 0px;
+	}
+	div.icext-widget.icext-posts-list ul li div.ice-content {
+		height: 32px;
+		padding-top: 5px;
+		padding: 5px 15px 0 15px;
+	}
+	div.icext-widget.icext-posts-list ul li a.ice-title {
+		display: inline-block;
+		font-size: 14px;
+		font-weight: bold;
+		margin-top: 5px;
+	}
+	div.icext-widget.icext-posts-list ul li div.ice-controls {
+		display: inline-block;
+		float: right;
+	}
+	div.icext-widget.icext-posts-list ul li a.ice-do-trash {
+		margin-left: 10px;
+	}
+	div.icext-widget.icext-posts-list ul ul {
+		margin-left: 20px;
+	}
+
+
+.icext-option.icext-ui-slider span.ice-title,
+.icext-option.icext-ui-slider span.ice-content {
+	font-size: 12px;
+	font-weight: bold;
+}
+.icext-option.icext-ui-slider div.ice-controls {
+	margin: 10px 0 15px 0;
+}
+
+.colorpicker {
+	z-index: 1000;
+}
+
+.colorpicker div.colorpicker_field input[type="text"] {
+	padding: 0;
+	height: 15px;
+}
+
+div.icext-option.icext-colorpicker_launcher {
+	display: inline-block;
+	position: relative;
+	width: 36px;
+	height: 36px;
+	vertical-align: top;
+	background: url('/wp-content/themes/cbox-theme/engine/ICE/ext/options/colorpicker/images/launch.png');
+}
+div.icext-option.icext-colorpicker_launcher div {
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	width: 30px;
+	height: 30px;
+	background: url('/wp-content/themes/cbox-theme/engine/ICE/ext/options/colorpicker/images/launch.png') center;
+}
+
+div.icext-option.icext-upload_widget fieldset {
+	margin-top: 18px\9; /* IE hack part 1 of 2 */
+	min-height: 160px;
+	padding: 10px;
+}
+	div.icext-option.icext-upload_widget fieldset legend {
+		margin-top: -24px\9; /* IE hack part 2 of 2 */
+		margin-left: 3px;
+		padding: 3px 5px 3px 3px;
+		font-size: 11px;
+		font-style: italic;
+	}
+div.icext-option.icext-upload_widget fieldset {
+	min-width: 200px;
+	max-width: 240px;
+	margin-right: 20px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+	div.icext-option.icext-upload_widget fieldset p {
+		min-height: 120px;
+	}
+	div.icext-option.icext-upload_widget fieldset p img {
+		max-height: 200px;
+		max-width: 200px;
+	}
+	div.icext-option.icext-upload_widget fieldset div {
+		text-align: center;
+	}
+		div.icext-option.icext-upload_widget fieldset div a span.ui-icon {
+			left: 0.1em;
+		}
+		div.icext-option.icext-upload_widget fieldset div a span.ui-button-text {
+			font-size: 10px;
+			padding-left: 1.8em;
+			padding-right: 0.5em;
+		}
+div.icext-option.icext-upload_widget div.ice-do-disable {
+	font-size: 11px;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 10px;
+}
+
+div.icext-option.icext-upload_dialog iframe {
+	width: 100%;
+	height: 500px;
+	overflow: auto;
+}

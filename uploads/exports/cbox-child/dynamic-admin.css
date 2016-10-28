@@ -1,0 +1,96 @@
+
+div.icext-section.icext-default > div.ice-title {
+	margin: 0 0 12px 0;
+	padding: 5px 10px;
+}
+div.icext-section.icext-default > div.ice-content {
+	border: none;
+	background: transparent;
+}
+
+div.icext-widget.icext-debugger div.ui-widget-header {
+	padding: 3px 6px;
+}
+div.icext-widget.icext-debugger div.ui-widget-content {
+	padding: 10px;
+}
+div.icext-widget.icext-debugger div.ui-widget-content ul {
+	margin-left: 10px;
+	list-style: disc;
+}
+	div.icext-widget.icext-debugger div.ui-widget-content ul li a {
+		min-width: 150px;
+		padding: 2px 6px;
+	}
+
+div.icext-widget.icext-posts-list {
+	width: 700px;
+}
+div.icext-widget.icext-posts-list div.ui-widget-header a {
+	float: right;
+	font-size: 11px;
+}
+div.icext-widget.icext-posts-list div.ui-widget-header,
+div.icext-widget.icext-posts-list div.ui-widget-content {
+	padding: .5em;
+}
+	div.icext-widget.icext-posts-list ul li {
+		margin: 5px 0px 5px 0px;
+	}
+	div.icext-widget.icext-posts-list ul li div.ice-content {
+		height: 32px;
+		padding-top: 5px;
+		padding: 5px 15px 0 15px;
+	}
+	div.icext-widget.icext-posts-list ul li a.ice-title {
+		display: inline-block;
+		font-size: 14px;
+		font-weight: bold;
+		margin-top: 5px;
+	}
+	div.icext-widget.icext-posts-list ul li div.ice-controls {
+		display: inline-block;
+		float: right;
+	}
+	div.icext-widget.icext-posts-list ul li a.ice-do-trash {
+		margin-left: 10px;
+	}
+	div.icext-widget.icext-posts-list ul ul {
+		margin-left: 20px;
+	}
+
+
+.icext-option.icext-ui-slider span.ice-title,
+.icext-option.icext-ui-slider span.ice-content {
+	font-size: 12px;
+	font-weight: bold;
+}
+.icext-option.icext-ui-slider div.ice-controls {
+	margin: 10px 0 15px 0;
+}
+
+.colorpicker {
+	z-index: 1000;
+}
+
+.colorpicker div.colorpicker_field input[type="text"] {
+	padding: 0;
+	height: 15px;
+}
+
+div.icext-option.icext-colorpicker_launcher {
+	display: inline-block;
+	position: relative;
+	width: 36px;
+	height: 36px;
+	vertical-align: top;
+	background: url('/wp-content/themes/cbox-theme/engine/ICE/ext/options/colorpicker/images/launch.png');
+}
+div.icext-option.icext-colorpicker_launcher div {
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	width: 30px;
+	height: 30px;
+	background: url('/wp-content/themes/cbox-theme/engine/ICE/ext/options/colorpicker/images/launch.png') center;
+}
