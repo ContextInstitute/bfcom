@@ -1,0 +1,797 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Debug This\n"
+"POT-Creation-Date: 2013-01-01 23:21-0600\n"
+"PO-Revision-Date: 2013-01-01 23:21-0600\n"
+"Last-Translator: Brian Fegter <Brian Fegter>\n"
+"Language-Team: Brian Fegter (misternifty) <brian@fegter.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../debug-this.php:221
+msgid "A debug extension could not be found."
+msgstr ""
+
+#: ../debug-this.php:230
+msgid "Debug This Mode"
+msgstr ""
+
+#: ../debug-this.php:241
+msgid "Example Debug Extension"
+msgstr ""
+
+#: ../debug-this.php:256 ../_inc/debug-template.php:9
+msgid "Debug This"
+msgstr ""
+
+#: ../_inc/extensions.php:7
+msgid "Actions"
+msgstr ""
+
+#: ../_inc/extensions.php:7
+msgid "$wp_actions contains all active registered actions"
+msgstr ""
+
+#: ../_inc/extensions.php:8
+msgid "Apache Information"
+msgstr ""
+
+#: ../_inc/extensions.php:8
+msgid "Apache version and list of modules"
+msgstr ""
+
+#: ../_inc/extensions.php:9
+msgid "Attachments"
+msgstr ""
+
+#: ../_inc/extensions.php:9
+msgid "List of post attachments"
+msgstr ""
+
+#: ../_inc/extensions.php:10
+msgid "Post Author"
+msgstr ""
+
+#: ../_inc/extensions.php:10
+msgid "Current author data"
+msgstr ""
+
+#: ../_inc/extensions.php:11
+msgid "Backtrace"
+msgstr ""
+
+#: ../_inc/extensions.php:11
+msgid "PHP Backtrace"
+msgstr ""
+
+#: ../_inc/extensions.php:12
+msgid "Blog Info"
+msgstr ""
+
+#: ../_inc/extensions.php:12
+msgid "Key/Values for get_bloginfo() or bloginfo()"
+msgstr ""
+
+#: ../_inc/extensions.php:13
+msgid "Classes"
+msgstr ""
+
+#: ../_inc/extensions.php:13
+msgid "Declared Classes"
+msgstr ""
+
+#: ../_inc/extensions.php:14
+msgid "Object Cache"
+msgstr ""
+
+#: ../_inc/extensions.php:14
+msgid "Object Cache stats"
+msgstr ""
+
+#: ../_inc/extensions.php:15
+msgid "Constants"
+msgstr ""
+
+#: ../_inc/extensions.php:15 ../_inc/extensions.php:211
+msgid "Defined Constants"
+msgstr ""
+
+#: ../_inc/extensions.php:16
+msgid "Constants (WordPress)"
+msgstr ""
+
+#: ../_inc/extensions.php:16
+msgid "Defined WordPress Constants"
+msgstr ""
+
+#: ../_inc/extensions.php:17
+msgid "Content Width"
+msgstr ""
+
+#: ../_inc/extensions.php:17
+msgid "global $content_width"
+msgstr ""
+
+#: ../_inc/extensions.php:18
+msgid "Context"
+msgstr ""
+
+#: ../_inc/extensions.php:18
+msgid "Conditional Context Tags"
+msgstr ""
+
+#: ../_inc/extensions.php:19
+msgid "WP Cron Schedules"
+msgstr ""
+
+#: ../_inc/extensions.php:20
+msgid "WP Cron Jobs"
+msgstr ""
+
+#: ../_inc/extensions.php:21
+msgid "CSS"
+msgstr ""
+
+#: ../_inc/extensions.php:21
+msgid "Rendered CSS"
+msgstr ""
+
+#: ../_inc/extensions.php:22
+msgid "Dropins"
+msgstr ""
+
+#: ../_inc/extensions.php:22
+msgid "List of all dropins that replace core WP functionality"
+msgstr ""
+
+#: ../_inc/extensions.php:23
+msgid "Extensions"
+msgstr ""
+
+#: ../_inc/extensions.php:23
+msgid "List of all loaded PHP extensions"
+msgstr ""
+
+#: ../_inc/extensions.php:24
+msgid "File Permissions"
+msgstr ""
+
+#: ../_inc/extensions.php:24
+msgid "Info about WP root, plugins and theme directories."
+msgstr ""
+
+#: ../_inc/extensions.php:25
+msgid "Files"
+msgstr ""
+
+#: ../_inc/extensions.php:25
+msgid "All required and included files"
+msgstr ""
+
+#: ../_inc/extensions.php:26
+msgid "Filters"
+msgstr ""
+
+#: ../_inc/extensions.php:26
+msgid ""
+"$wp_filter contains all registered filters. Callback functions are contained "
+"in parentheses"
+msgstr ""
+
+#: ../_inc/extensions.php:27
+msgid "Current"
+msgstr ""
+
+#: ../_inc/extensions.php:27
+msgid "Current Filters and Actions"
+msgstr ""
+
+#: ../_inc/extensions.php:28
+msgid "Functions"
+msgstr ""
+
+#: ../_inc/extensions.php:28
+msgid "All defined user functions"
+msgstr ""
+
+#: ../_inc/extensions.php:29
+msgid "Images"
+msgstr ""
+
+#: ../_inc/extensions.php:29
+msgid "Rendered images on the current page/post"
+msgstr ""
+
+#: ../_inc/extensions.php:30
+msgid "Image Sizes"
+msgstr ""
+
+#: ../_inc/extensions.php:30
+msgid ""
+"All registered image sizes. Uses get_intermediate_image_sizes() & global "
+"$_wp_additional_image_sizes"
+msgstr ""
+
+#: ../_inc/extensions.php:31
+msgid "JavaScript"
+msgstr ""
+
+#: ../_inc/extensions.php:31
+msgid "Rendered JS"
+msgstr ""
+
+#: ../_inc/extensions.php:32
+msgid "Load Time"
+msgstr ""
+
+#: ../_inc/extensions.php:32
+msgid "True page load time (sans Debug This)"
+msgstr ""
+
+#: ../_inc/extensions.php:33
+msgid "Registered Menus"
+msgstr ""
+
+#: ../_inc/extensions.php:33
+msgid "All registered menus"
+msgstr ""
+
+#: ../_inc/extensions.php:34 ../_inc/extensions.php:466
+msgid "Dynamic Menus"
+msgstr ""
+
+#: ../_inc/extensions.php:34
+msgid "Dynamic Menus and Locations"
+msgstr ""
+
+#: ../_inc/extensions.php:35
+msgid "oEmbed"
+msgstr ""
+
+#: ../_inc/extensions.php:35
+msgid "Registered oEmbed providers"
+msgstr ""
+
+#: ../_inc/extensions.php:36
+msgid "Options"
+msgstr ""
+
+#: ../_inc/extensions.php:36
+msgid "A list of all autoloaded options"
+msgstr ""
+
+#: ../_inc/extensions.php:37
+msgid "phpinfo()"
+msgstr ""
+
+#: ../_inc/extensions.php:38
+msgid "php.ini"
+msgstr ""
+
+#: ../_inc/extensions.php:38
+msgid "php.ini configuration"
+msgstr ""
+
+#: ../_inc/extensions.php:39
+msgid "Plugins"
+msgstr ""
+
+#: ../_inc/extensions.php:39
+msgid "A list of all plugins"
+msgstr ""
+
+#: ../_inc/extensions.php:40
+msgid "Post"
+msgstr ""
+
+#: ../_inc/extensions.php:40
+msgid "Single post object"
+msgstr ""
+
+#: ../_inc/extensions.php:41
+msgid "Post Meta"
+msgstr ""
+
+#: ../_inc/extensions.php:41
+msgid "Post meta for the queried object."
+msgstr ""
+
+#: ../_inc/extensions.php:42
+msgid "Post Objects"
+msgstr ""
+
+#: ../_inc/extensions.php:42
+msgid "Archive post objects"
+msgstr ""
+
+#: ../_inc/extensions.php:43
+msgid "All Post Types"
+msgstr ""
+
+#: ../_inc/extensions.php:43
+msgid "Lists all registered post types in WordPress"
+msgstr ""
+
+#: ../_inc/extensions.php:44
+msgid "Current Post Type"
+msgstr ""
+
+#: ../_inc/extensions.php:44
+msgid "Post type for the queried object"
+msgstr ""
+
+#: ../_inc/extensions.php:45
+msgid "Saved Queries"
+msgstr ""
+
+#: ../_inc/extensions.php:45
+msgid "All queries run on the current page load (sans Debug This)"
+msgstr ""
+
+#: ../_inc/extensions.php:46
+msgid "Request"
+msgstr ""
+
+#: ../_inc/extensions.php:46
+msgid "Current request"
+msgstr ""
+
+#: ../_inc/extensions.php:47
+msgid "Rewrites"
+msgstr ""
+
+#: ../_inc/extensions.php:47
+msgid ""
+"A list of all cached rewrites. To refresh the cache, visit Settings-"
+">Permalinks"
+msgstr ""
+
+#: ../_inc/extensions.php:48
+msgid "Scripts"
+msgstr ""
+
+#: ../_inc/extensions.php:48
+msgid "List of registered scripts. Uses $wp_scripts"
+msgstr ""
+
+#: ../_inc/extensions.php:49
+msgid "$_SERVER"
+msgstr ""
+
+#: ../_inc/extensions.php:49
+msgid "$_SERVER information"
+msgstr ""
+
+#: ../_inc/extensions.php:50
+msgid "Shortcodes"
+msgstr ""
+
+#: ../_inc/extensions.php:50
+msgid "List of all registered shortcodes"
+msgstr ""
+
+#: ../_inc/extensions.php:51
+msgid "Shortcodes Regex"
+msgstr ""
+
+#: ../_inc/extensions.php:51
+msgid "Dynamically generated shortcode regex - get_shortcode_regex()"
+msgstr ""
+
+#: ../_inc/extensions.php:52
+msgid "Current Sidebars"
+msgstr ""
+
+#: ../_inc/extensions.php:52
+msgid ""
+"All instances of get_sidebar() and dynamic_sidebar() in the current template"
+msgstr ""
+
+#: ../_inc/extensions.php:53 ../_inc/extensions.php:650
+msgid "Registered Sidebars"
+msgstr ""
+
+#: ../_inc/extensions.php:53
+msgid "All registered sidebars. Uses $wp_registered_sidebars"
+msgstr ""
+
+#: ../_inc/extensions.php:54
+msgid "Styles"
+msgstr ""
+
+#: ../_inc/extensions.php:54
+msgid "List of rendered and registered styles"
+msgstr ""
+
+#: ../_inc/extensions.php:55
+msgid "Taxonomies"
+msgstr ""
+
+#: ../_inc/extensions.php:55
+msgid "Lists all registered taxonomies in WordPress"
+msgstr ""
+
+#: ../_inc/extensions.php:56
+msgid "Current Template"
+msgstr ""
+
+#: ../_inc/extensions.php:56
+msgid "Current template file"
+msgstr ""
+
+#: ../_inc/extensions.php:57
+msgid "Post Terms"
+msgstr ""
+
+#: ../_inc/extensions.php:57
+msgid "All terms for the current single post/page"
+msgstr ""
+
+#: ../_inc/extensions.php:58
+msgid "All Terms"
+msgstr ""
+
+#: ../_inc/extensions.php:58
+msgid "A list of all terms"
+msgstr ""
+
+#: ../_inc/extensions.php:60 ../_inc/extensions.php:704
+msgid "Themes"
+msgstr ""
+
+#: ../_inc/extensions.php:60
+msgid "List of all WP_Theme objects"
+msgstr ""
+
+#: ../_inc/extensions.php:61
+msgid "All Users"
+msgstr ""
+
+#: ../_inc/extensions.php:61
+msgid "List of all users"
+msgstr ""
+
+#: ../_inc/extensions.php:62
+msgid "Variables"
+msgstr ""
+
+#: ../_inc/extensions.php:62
+msgid "List of all defined variables"
+msgstr ""
+
+#: ../_inc/extensions.php:63
+msgid "Widgets"
+msgstr ""
+
+#: ../_inc/extensions.php:63
+msgid "All registered widgets - uses $wp_widget_factor->widgets"
+msgstr ""
+
+#: ../_inc/extensions.php:64
+msgid "WP Debug"
+msgstr ""
+
+#: ../_inc/extensions.php:64
+msgid "Displays a list of notices rendered by WP_DEBUG mode"
+msgstr ""
+
+#: ../_inc/extensions.php:65
+msgid "WP_Query"
+msgstr ""
+
+#: ../_inc/extensions.php:65
+msgid "Current WP_Query object - global $wp_query"
+msgstr ""
+
+#: ../_inc/extensions.php:66
+msgid "Debug This Menu"
+msgstr ""
+
+#: ../_inc/extensions.php:66
+msgid "Modes Navigation"
+msgstr ""
+
+#: ../_inc/extensions.php:86
+msgid "No Title"
+msgstr ""
+
+#: ../_inc/extensions.php:88
+#, php-format
+msgid "ID: %s"
+msgstr ""
+
+#: ../_inc/extensions.php:89
+#, php-format
+msgid "Mime Type: %s"
+msgstr ""
+
+#: ../_inc/extensions.php:91
+msgid "URL: "
+msgstr ""
+
+#: ../_inc/extensions.php:93
+#, php-format
+msgid "Description: %s"
+msgstr ""
+
+#: ../_inc/extensions.php:98
+msgid "No attachments found."
+msgstr ""
+
+#: ../_inc/extensions.php:105
+msgid "This extension only works on Apache."
+msgstr ""
+
+#: ../_inc/extensions.php:107
+msgid "Version"
+msgstr ""
+
+#: ../_inc/extensions.php:109
+msgid "Modules"
+msgstr ""
+
+#: ../_inc/extensions.php:112
+msgid "No modules were found. This could be a symptom of running PHP as CGI."
+msgstr ""
+
+#: ../_inc/extensions.php:118
+msgid "This mode can only be used on a single post/page."
+msgstr ""
+
+#: ../_inc/extensions.php:128
+msgid "Backtrace Summary"
+msgstr ""
+
+#: ../_inc/extensions.php:131
+msgid "debug_backtrace()"
+msgstr ""
+
+#: ../_inc/extensions.php:183 ../_inc/extensions.php:203
+msgid "false"
+msgstr ""
+
+#: ../_inc/extensions.php:185 ../_inc/extensions.php:205
+msgid "empty string"
+msgstr ""
+
+#: ../_inc/extensions.php:213
+msgid "Undefined Constants"
+msgstr ""
+
+#: ../_inc/extensions.php:234
+msgid "No cron jobs found."
+msgstr ""
+
+#: ../_inc/extensions.php:283 ../_inc/extensions.php:441
+#: ../_inc/extensions.php:452
+#, php-format
+msgid "Template: %s"
+msgstr ""
+
+#: ../_inc/extensions.php:284 ../_inc/extensions.php:442
+#: ../_inc/extensions.php:453
+#, php-format
+msgid "URL: %s"
+msgstr ""
+
+#: ../_inc/extensions.php:285
+msgid "Stylesheets"
+msgstr ""
+
+#: ../_inc/extensions.php:297
+#, php-format
+msgid "No dropins found. To learn more, please see: %s"
+msgstr ""
+
+#: ../_inc/extensions.php:309
+msgid "This extension has only been tested on Apache."
+msgstr ""
+
+#: ../_inc/extensions.php:318
+#, php-format
+msgid "%s %s Recommended: %s - To change, run: chmod %s %s"
+msgstr ""
+
+#: ../_inc/extensions.php:320
+#, php-format
+msgid "Permissions: %s"
+msgstr ""
+
+#: ../_inc/extensions.php:338
+msgid "The current WordPress user might not have access to this file/folder."
+msgstr ""
+
+#: ../_inc/extensions.php:340
+#, php-format
+msgid "Owner/Group: %s:%s"
+msgstr ""
+
+#: ../_inc/extensions.php:346
+msgid "access"
+msgstr ""
+
+#: ../_inc/extensions.php:346
+msgid "no access"
+msgstr ""
+
+#: ../_inc/extensions.php:347
+#, php-format
+msgid "Rubric: %s"
+msgstr ""
+
+#: ../_inc/extensions.php:353
+msgid "WordPress User"
+msgstr ""
+
+#: ../_inc/extensions.php:354
+#, php-format
+msgid "User: %s"
+msgstr ""
+
+#: ../_inc/extensions.php:355
+#, php-format
+msgid "Group: %s"
+msgstr ""
+
+#: ../_inc/extensions.php:374
+msgid "Couldn't find wp-config.php!"
+msgstr ""
+
+#: ../_inc/extensions.php:387
+msgid "Required Files"
+msgstr ""
+
+#: ../_inc/extensions.php:389
+msgid "Included Files"
+msgstr ""
+
+#: ../_inc/extensions.php:431
+msgid "Registered Sizes Names"
+msgstr ""
+
+#: ../_inc/extensions.php:433
+msgid "Registered Size Definitions"
+msgstr ""
+
+#: ../_inc/extensions.php:443
+msgid "JavaScript Files"
+msgstr ""
+
+#: ../_inc/extensions.php:454
+#, php-format
+msgid "Execution Time: %s"
+msgstr ""
+
+#: ../_inc/extensions.php:454
+msgid "seconds"
+msgstr ""
+
+#: ../_inc/extensions.php:464
+msgid "Dynamic Menu Locations"
+msgstr ""
+
+#: ../_inc/extensions.php:511 ../_inc/extensions.php:529
+msgid "This mode only works for single posts/pages"
+msgstr ""
+
+#: ../_inc/extensions.php:519
+#, php-format
+msgid "Number of Posts: %d"
+msgstr ""
+
+#: ../_inc/extensions.php:523
+msgid "This mode only works for archive/home pages"
+msgstr ""
+
+#: ../_inc/extensions.php:556
+msgid ""
+"Please set define(\"SAVEQUERIES\", true); in wp-config.php to see saved "
+"queries. Please disable when completed as this can be a large performance "
+"hit."
+msgstr ""
+
+#: ../_inc/extensions.php:572
+msgid ""
+"Pretty permalinks must be enabled to use this mode. To set a permalink "
+"structure, go to Settings->Permalinks in wp-admin."
+msgstr ""
+
+#: ../_inc/extensions.php:574
+msgid "Current Rewrite"
+msgstr ""
+
+#: ../_inc/extensions.php:575
+msgid "Matched Rule"
+msgstr ""
+
+#: ../_inc/extensions.php:576
+msgid "Matched Query"
+msgstr ""
+
+#: ../_inc/extensions.php:577
+msgid "Query String"
+msgstr ""
+
+#: ../_inc/extensions.php:578
+msgid "Rewrite Rules"
+msgstr ""
+
+#: ../_inc/extensions.php:582
+msgid "Rule"
+msgstr ""
+
+#: ../_inc/extensions.php:582
+msgid "Rewrite"
+msgstr ""
+
+#: ../_inc/extensions.php:591
+msgid "No rules defined."
+msgstr ""
+
+#: ../_inc/extensions.php:631
+#, php-format
+msgid "Dynamic Sidebar: %s"
+msgstr ""
+
+#: ../_inc/extensions.php:634
+#, php-format
+msgid "Missing sidebar template for %s.php"
+msgstr ""
+
+#: ../_inc/extensions.php:640
+#, php-format
+msgid "Current Template: %s"
+msgstr ""
+
+#: ../_inc/extensions.php:644
+msgid "No sidebars were found in this template."
+msgstr ""
+
+#: ../_inc/extensions.php:689
+#, php-format
+msgid "Term ID #%s - %s - %s"
+msgstr ""
+
+#: ../_inc/extensions.php:696
+msgid "This mode only works on single pages/posts."
+msgstr ""
+
+#: ../_inc/extensions.php:701
+msgid "Current Theme"
+msgstr ""
+
+#: ../_inc/extensions.php:748
+msgid "Reset log file"
+msgstr ""
+
+#: ../_inc/extensions.php:751
+msgid "Debug log was successfully cleared."
+msgstr ""
+
+#: ../_inc/extensions.php:753
+msgid "Debug log could not be reset. Please try again"
+msgstr ""
+
+#: ../_inc/extensions.php:757 ../_inc/extensions.php:760
+msgid "Looking good! No notices were logged."
+msgstr ""
+
+#: ../_inc/extensions.php:762
+msgid ""
+"Could not open debug.log. Please make sure your wp-content folder is "
+"writeable by the web server user."
+msgstr ""
+
+#: ../_inc/extensions.php:766
+msgid ""
+"Please add the following to wp-config.php to use this mode.\n"
+"define('WP_DEBUG', true);\n"
+"define('WP_DEBUG_LOG', true);\n"
+"define('WP_DEBUG_DISPLAY', false);"
+msgstr ""

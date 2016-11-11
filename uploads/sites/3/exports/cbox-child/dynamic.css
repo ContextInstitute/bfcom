@@ -1696,11 +1696,11 @@ a.button:hover, button:hover,#review_form #submit:hover {
 }
 @font-face {
     font-family: 'iconSweetsRegular';
-    src: url('blic_html/bfn/wp-content/themes/cbox-theme/assets/fonts/iconsweets-webfont.eot');
-    src: url('blic_html/bfn/wp-content/themes/cbox-theme/assets/fonts/iconsweets-webfont.eot?#iefix') format('embedded-opentype'),
-         url('blic_html/bfn/wp-content/themes/cbox-theme/assets/fonts/iconsweets-webfont.woff') format('woff'),
-         url('blic_html/bfn/wp-content/themes/cbox-theme/assets/fonts/iconsweets-webfont.ttf') format('truetype'),
-         url('blic_html/bfn/wp-content/themes/cbox-theme/assets/fonts/iconsweets-webfont.svg#iconSweetsRegular') format('svg');
+    src: url('ic_html/bfnet/wp-content/themes/cbox-theme/assets/fonts/iconsweets-webfont.eot');
+    src: url('ic_html/bfnet/wp-content/themes/cbox-theme/assets/fonts/iconsweets-webfont.eot?#iefix') format('embedded-opentype'),
+         url('ic_html/bfnet/wp-content/themes/cbox-theme/assets/fonts/iconsweets-webfont.woff') format('woff'),
+         url('ic_html/bfnet/wp-content/themes/cbox-theme/assets/fonts/iconsweets-webfont.ttf') format('truetype'),
+         url('ic_html/bfnet/wp-content/themes/cbox-theme/assets/fonts/iconsweets-webfont.svg#iconSweetsRegular') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -2196,7 +2196,7 @@ Infinity combines all the stylesheets into one file called dynamic.css. You can 
 http://infinity.presscrew.com/learn
 --------------------------------------------------------------*/
 body {
-	background: url('blic_html/bfn/wp-content/themes/cbox-theme/assets/images/bg-body.gif') repeat transparent;
+	background: url('ic_html/bfnet/wp-content/themes/cbox-theme/assets/images/bg-body.gif') repeat transparent;
 	border-top: 5px solid #4B4A47;
 	font: 90%/140% "HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
@@ -2289,11 +2289,11 @@ h1#site-title,div#site-title {
 	border-radius: 6px 6px 6px 6px;
 }
 .main-menu ul a:hover {
-	background: url('blic_html/bfn/wp-content/themes/cbox-theme/assets/images/bg-body.gif') repeat transparent;
+	background: url('ic_html/bfnet/wp-content/themes/cbox-theme/assets/images/bg-body.gif') repeat transparent;
 }
 .base-menu ul li.current-cat a,.base-menu ul li.current_page_item a,.base-menu ul li.current-menu-item a {
 	font-weight: bold;
-	background: url('blic_html/bfn/wp-content/themes/cbox-theme/assets/images/bg-body.gif') repeat transparent;
+	background: url('ic_html/bfnet/wp-content/themes/cbox-theme/assets/images/bg-body.gif') repeat transparent;
 }
 .widget h4,#vertical-activity-tabs h4 {
 	border-bottom: 1px solid #EDEDED;
@@ -2392,7 +2392,7 @@ div#subnav.item-list-tabs {
 }
 #sidebar .item-list-tabs li.loading a {
 	background: transparent !important;
-	background-image: url('blic_html/bfn/wp-content/themes/cbox-theme/assets/images/ajax-loader.gif') !important;
+	background-image: url('ic_html/bfnet/wp-content/themes/cbox-theme/assets/images/ajax-loader.gif') !important;
 	background-repeat: no-repeat !important;
 	background-position: 5px 8px !important;
 }
@@ -2538,7 +2538,7 @@ ul.item-list li {
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 .flex-caption {
-	background-image: url('blic_html/bfn/wp-content/themes/cbox-theme/assets/images/slides-bg.png');
+	background-image: url('ic_html/bfnet/wp-content/themes/cbox-theme/assets/images/slides-bg.png');
 	color: #FFF;
 	text-shadow: 0 1px 0 #000000;
 	border-top: 1px solid #545353;
@@ -3662,7 +3662,7 @@ body.wiki.single-bp_doc #subnav {
 }
 /*+++ generating style ***/
 body.theme-option {
-	background-image: url('http://bright-future-now.org/bfnetwebteam/wp-content/themes/cbox-theme/assets/images/bg-body.gif');
+	background-image: url('http://bfn.context.org/bfnetwebteam/wp-content/themes/cbox-theme/assets/images/bg-body.gif');
 }
 /*--- style generation complete! */
 
