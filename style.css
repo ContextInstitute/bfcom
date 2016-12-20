@@ -109,6 +109,11 @@ body {
     min-width: 330px;
 }
 
+#footer {
+    padding: 0px;
+}
+
+
 @media(max-width: 768px)  {
   .bf-logo {
     display:none;
@@ -173,3 +178,17 @@ body {
 
 }
 
+.footer-wrap {
+    border-top:  1px solid #EDEDED;
+    border-bottom: none;
+    box-shadow: none;
+}
+#powered-by {
+    border-top: none;
+}
+.menu-bfcom-footer-menu-container {
+    display: flex;
+}
+#menu-bfcom-footer-menu {
+    margin: auto;
+}

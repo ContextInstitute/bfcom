@@ -21,6 +21,7 @@
 	infinity_get_template_part( 'templates/parts/header-head');	
 ?>
 <body <?php body_class() ?> id="infinity-base">
+    <a name= "TopOfPage"/a>
 <?php
 	do_action( 'open_body' );
 ?>

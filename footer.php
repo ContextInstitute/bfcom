@@ -24,10 +24,10 @@
 		<footer id="footer" role="contentinfo">
 			<?php
 				do_action( 'open_footer' );
-				infinity_get_template_part( 'templates/parts/footer-widgets' );
+//				infinity_get_template_part( 'templates/parts/footer-widgets' );
 			?>
 			<div id="powered-by">
-				<div id="footer-info" class="column ten">
+				<div id="footer-info" class="column sixteen">
 				<?php
 					// Load Footer Menu only if it's enabled
 					if ( current_theme_supports( 'infinity-footer-menu-setup' ) ) :
@@ -35,9 +35,9 @@
 					endif;
 				?>
 				</div>
-				<div id="copyright-info" class="column six">	
-					<?php echo infinity_option_get( 'infinity-core-options.footer-text' ); ?>
-				</div>
+<!--				<div id="copyright-info" class="column six">	-->
+<!--					--><?php //echo infinity_option_get( 'infinity-core-options.footer-text' ); ?>
+<!--				</div>-->
 			</div>
 			<?php
 				do_action( 'close_footer' );
