@@ -12,6 +12,8 @@ Template: cbox-theme
 CBOX combines all the stylesheets into one file called dynamic.css. You can also write CSS using LESS. To learn all about this visit
 http://commonsinabox.org/documentation/themes/developer-guide/adding-and-overwriting-custom-css
 --------------------------------------------------------------*/
+
+/*Header.php css*/
 body {
     background: none;
     border-top: 0;
@@ -107,75 +109,104 @@ body {
     flex-grow: 1;
     height: 27px;
     min-width: 330px;
+    text-align: center;
+}
+.base-menu, .top-menu, .main-menu, .sub-menu {
+    padding: 0;
 }
 
-#footer {
-    padding: 0px;
+.main-menu {
+    padding-left: 8px;
+}
+.main-menu ul a {
+    border-radius: 0px;
+    font-weight: 400;
+    margin-right: 0px;
+    border-radius: 0px;
+
+}
+#main-menu-wrap .main-menu {
+    float: inherit;
+    font-size: 100%;
+    width: auto;
+}
+#main-menu-wrap {
+    padding-top: 0px;
+    margin-bottom: -6px;
 }
 
+#sub-menu-wrap {
+    display: inline-block;
+}
+
+#sub-menu-wrap .sub-menu {
+    position: relative;
+}
 
 @media(max-width: 768px)  {
-  .bf-logo {
-    display:none;
-  }
-  .bf-user-big {
-    display:none;
-  }
-  .bf-submenu {
-    display:none;
-  }
-  .bf-menuicon {
-    display:inline;
-    margin-left: 10px;
-  }
-  .bf-user-small {
-    display:inline;
-    margin-right: 10px;
-  }
-  
-  .bf-middlerow {
-    flex-direction: column;
-  }
-  .bf-mainmenu, .bf-breadcrumbs {
-      flex-grow: 1;
-      flex-shrink: 1;
-      min-width: 400px;
-      max-width: 768px;
-      height: 27px;
-  }
-  .bf-header {
-    min-width:320px;
-    height: 80px;
-  }
+    .bf-logo {
+        display:none;
+    }
+    .bf-user-big {
+        display:none;
+    }
+    .bf-submenu {
+        display:none;
+    }
+    .bf-menuicon {
+        display:inline;
+        margin-left: 10px;
+    }
+    .bf-user-small {
+        display:inline;
+        margin-right: 10px;
+    }
 
-  .bf-breadcrumbs {
-      padding-left: 10px;
-  }
-  .bf-search {
-    min-width: 246px;
-  }
+    .bf-middlerow {
+        flex-direction: column;
+    }
+    .bf-mainmenu, .bf-breadcrumbs {
+        flex-grow: 1;
+        flex-shrink: 1;
+        min-width: 400px;
+        max-width: 768px;
+        height: 27px;
+    }
+    .bf-header {
+        min-width:320px;
+        height: 80px;
+    }
 
-  .bf-mainmenu {
-      display: flex;
-  }
-  .base-menu, .top-menu {
-      padding: 0;
-  }
+    .bf-breadcrumbs {
+        padding-left: 10px;
+    }
+    .bf-search {
+        min-width: 246px;
+    }
 
-  #top-menu-wrap {
-      margin: auto;
-  }
-  #wrapper.hfeed {
-      margin: 0;
-      padding: 0;
-  }
+    .bf-mainmenu {
+        display: flex;
+    }
+    #main-menu-wrap {
+        margin: auto;
+    }
+    #wrapper.hfeed {
+        margin: 0;
+        padding: 0;
+    }
 }
 @media(max-width: 400px)  {
 
- .bf-mainmenu, .bf-breadcrumbs {
-      min-width: 320px;
- }
+    .bf-mainmenu, .bf-breadcrumbs {
+        min-width: 320px;
+    }
 
+}
+
+/*footer.php css*/
+
+#footer {
+    padding: 0px;
 }
 
 .footer-wrap {

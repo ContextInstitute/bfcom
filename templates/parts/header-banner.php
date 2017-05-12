@@ -31,9 +31,9 @@
 	                } else {
 		                $profile_url = false;
 	                }
-	                // Load Top Menu only if it's enabled
-	                if ( current_theme_supports( 'infinity-top-menu-setup' ) ) :
-		                infinity_get_template_part( 'templates/parts/top-menu', 'header' );
+	                // Load Main Menu only if it's enabled
+	                if ( current_theme_supports( 'infinity-main-menu-setup' ) ) :
+		                infinity_get_template_part( 'templates/parts/main-menu', 'header' );
 	                endif;
 	                ?>
                 </div>
@@ -44,25 +44,25 @@
                 </div>
             </div>
             <div class="bf-middlerow">
-<!--	            --><?php //if(function_exists('bcn_display'))
-//	            {
-//		            $bf_breadcrumbs = bcn_display('true');
-//		            $bf_bcdisplay = "";
-//		            if($bf_breadcrumbs=="")
-//		            {
-//		                $bf_bcdisplay = 'style ="'.'display: none"';
-//		            }
-//		            $bf_token = 1;
-//	            }?>
                 <div class="bf-breadcrumbs">
                     <div class="breadcrumbs" typeof="BreadcrumbList" vocab="http://schema.org/">
-                        <?php if(function_exists('bcn_display')) {
+	                    <?php echo 'breadcrumbs go here';
+                            /*if(function_exists('bcn_display')) {
 	                        bcn_display();
                         }
-                        ?>
+                        */?>
                     </div>
                 </div>
-                <div class="bf-submenu" style="text-align:center">Submenu</div>
+                <div class="bf-submenu">
+	                <?php if (bp_current_component() == 'groups') {
+//                    bp_get_options_nav();
+	                // Load Sub Menu only if it's enabled
+	                if ( current_theme_supports( 'infinity-sub-menu-setup' ) ) :
+		                infinity_get_template_part( 'templates/parts/sub-menu', 'header' );
+	                endif;}
+	                else {echo 'Submenu';}
+	                ?>
+                </div>
             </div>
         </div>
         <div class="bf-user-big"><a href="<?php echo $profile_url;?>"><img src="<?php echo $avatar;?>"></a>
