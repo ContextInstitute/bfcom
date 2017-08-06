@@ -6,6 +6,7 @@ Tags: buddypress
 Version: 1.0
 Author: Robert Gilman
 Template: cbox-theme
+GitHub Theme URI: https://github.com/ContextInstitute/bfcom
 */
 /*
 ----------------------------------------------------------------
@@ -223,3 +224,11 @@ body {
 #menu-bfcom-footer-menu {
     margin: auto;
 }
+
+/*group forum*/
+
+/*fix for forum title buried in wp-content/plugins/bbpress/includes/extend/buddypress/groups.php*/
+/*
+#bbpress-forums > h3 {
+    display: none;
+}*/

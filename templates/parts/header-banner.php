@@ -46,11 +46,14 @@
             <div class="bf-middlerow">
                 <div class="bf-breadcrumbs">
                     <div class="breadcrumbs" typeof="BreadcrumbList" vocab="http://schema.org/">
-	                    <?php echo 'breadcrumbs go here';
-                            /*if(function_exists('bcn_display')) {
-	                        bcn_display();
-                        }
-                        */?>
+	                    <?php if (bp_current_component() == 'groups') {
+		                    bp_group_name();
+	                    } elseif(bp_current_component() == 'profile'){
+		                    bp_displayed_user_fullname();
+	                    } else {
+		                    echo bp_current_component();
+		                    echo bp_group_name();
+	                    }?>
                     </div>
                 </div>
                 <div class="bf-submenu">
