@@ -14,7 +14,8 @@
 <div class="bbp-pagination">
 	<div class="bbp-pagination-count">
 
-		<?php bbp_topic_pagination_count(); ?>
+		<?php bbp_topic_pagination_count();
+		do_action( 'bp_group_header_meta' ); ?>
 
 	</div>
 

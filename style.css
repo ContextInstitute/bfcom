@@ -223,3 +223,11 @@ body {
 #menu-bfcom-footer-menu {
     margin: auto;
 }
+
+/*group forum*/
+
+/*fix for forum title buried in wp-content/plugins/bbpress/includes/extend/buddypress/groups.php*/
+/*
+#bbpress-forums > h3 {
+    display: none;
+}*/

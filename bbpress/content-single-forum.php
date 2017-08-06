@@ -11,7 +11,7 @@
 
 <div id="bbpress-forums">
 
-	<?php bbp_breadcrumb(); ?>
+<!--	--><?php //bbp_breadcrumb(); ?>
 
 	<?php bbp_forum_subscription_link(); ?>
 
@@ -23,7 +23,7 @@
 
 	<?php else : ?>
 
-		<?php bbp_single_forum_description(); ?>
+<!--		--><?php //bbp_single_forum_description(); ?>
 
 		<?php if ( bbp_has_forums() ) : ?>
 
@@ -34,6 +34,8 @@
 		<?php if ( !bbp_is_forum_category() && bbp_has_topics() ) : ?>
 
 			<?php bbp_get_template_part( 'pagination', 'topics'    ); ?>
+
+			<?php do_action( 'bp_group_header_actions' ); ?>
 
 			<?php bbp_get_template_part( 'loop',       'topics'    ); ?>
 
