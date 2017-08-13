@@ -68,7 +68,16 @@
                 </div>
             </div>
         </div>
-        <div class="bf-user-big"><a href="<?php echo $profile_url;?>"><img src="<?php echo $avatar;?>"></a>
+        <div class="dropdown bf-user-big sidebar-left">
+            <a href="<?php echo $profile_url;?>"><img src="<?php echo $avatar;?>"></a>
+            <div class="dropdown-content">
+                <?php 
+	                if ( current_theme_supports( 'infinity-sub-menu-setup' ) ) :
+		                infinity_get_template_part( 'templates/parts/sub-menu', 'header' );
+	                endif;
+                ?>
+            </div>
         </div>
+
     </header><!-- end header -->
 </div><!-- end top wrap -->
