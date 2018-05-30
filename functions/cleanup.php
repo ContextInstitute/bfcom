@@ -98,4 +98,3 @@ function joints_get_the_author_posts_link() {
 	);
 	return $link;
 }
-add_filter('show_admin_bar','__return_false');
