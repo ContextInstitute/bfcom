@@ -4,6 +4,9 @@
  *
  */			
 	
+// bfcom-specific functions
+require_once(get_template_directory().'/functions/bfcom-fn.php'); 
+
 // Theme support options
 require_once(get_template_directory().'/functions/theme-support.php'); 
 
