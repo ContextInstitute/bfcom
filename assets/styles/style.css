@@ -351,3 +351,12 @@ PLUGIN STYLES
   margin: 0; }
 
 /*# sourceMappingURL=style.css.map */
+
+/* BFCom styles */
+.menu-item-home.active > a,
+.dropdown .menu-item-home > a {
+  background-image: url(/wp-content/themes/bfcom/assets/images/home.svg);
+  background-repeat: no-repeat;
+  padding-left: 30px;
+  background-position: 3px 4px;
+}
