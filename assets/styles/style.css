@@ -360,3 +360,35 @@ PLUGIN STYLES
   padding-left: 30px;
   background-position: 3px 4px;
 }
+
+.menu-item.members.active > a,
+.dropdown .menu-item.members > a {
+  background-image: url(/wp-content/themes/bfcom/assets/images/members.svg);
+  background-repeat: no-repeat;
+  padding-left: 30px;
+  background-position: 3px 4px;
+}
+
+.menu-item.groups.active > a,
+.dropdown .menu-item.groups > a {
+  background-image: url(/wp-content/themes/bfcom/assets/images/groups.svg);
+  background-repeat: no-repeat;
+  padding-left: 30px;
+  background-position: 3px 4px;
+}
+
+.menu-item.active > a,
+.dropdown .menu-item > a {
+  background-image: url(/wp-content/themes/bfcom/assets/images/resources.svg);
+  background-repeat: no-repeat;
+  padding-left: 30px;
+  background-position: 3px 4px;
+}
+
+.menu-item.blogs.active > a,
+.dropdown .menu-item.blogs > a {
+  background-image: url(/wp-content/themes/bfcom/assets/images/blog.svg);
+  background-repeat: no-repeat;
+  padding-left: 30px;
+  background-position: 3px 4px;
+}
