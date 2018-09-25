@@ -377,8 +377,8 @@ PLUGIN STYLES
   background-position: 3px 4px;
 }
 
-.menu-item.active > a,
-.dropdown .menu-item > a {
+.menu-item-167.active > a,
+.dropdown .menu-item-167 > a {
   background-image: url(/wp-content/themes/bfcom/assets/images/resources.svg);
   background-repeat: no-repeat;
   padding-left: 30px;
