@@ -18,4 +18,9 @@
 
 	</ul>
 </nav>
-<?php endif; ?>
+<?php endif; 
+// var_dump (bp_core_get_components());
+echo ("<br />component: ".bp_current_component());
+echo (", item: ".bp_current_item());
+echo (", action: ".bp_current_action()."<br />");
+?>
