@@ -392,3 +392,37 @@ PLUGIN STYLES
   padding-left: 30px;
   background-position: 3px 4px;
 }
+
+.header-grid {
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
+  grid-template-rows: 40px 40px;
+  grid-template-areas: 'Logo TopMenu User' 'SubMenu SubMenu SubMenu';
+}
+
+@media (min-width:768px) {
+  .header-grid {
+      display: grid;
+      grid-template-columns: 80px 1fr 100px;
+      grid-template-rows: 40px 40px;
+      grid-template-areas: 'Logo TopMenu User' 'Logo SubMenu User';
+  }
+}
+
+.header-logo {
+  grid-area: Logo;
+}
+
+.header-topmenu {
+  grid-area: TopMenu;
+  margin: 0 auto;
+}
+
+.header-user {
+  grid-area: User;
+}
+
+.header-submenu {
+  grid-area: SubMenu;
+  margin: 0 auto;
+}
