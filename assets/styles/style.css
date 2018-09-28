@@ -398,15 +398,7 @@ PLUGIN STYLES
   grid-template-columns: 40px 1fr 40px;
   grid-template-rows: 40px 40px;
   grid-template-areas: 'Logo TopMenu User' 'SubMenu SubMenu SubMenu';
-}
-
-@media (min-width:768px) {
-  .header-grid {
-      display: grid;
-      grid-template-columns: 80px 1fr 100px;
-      grid-template-rows: 40px 40px;
-      grid-template-areas: 'Logo TopMenu User' 'Logo SubMenu User';
-  }
+  margin: 10px 15px;
 }
 
 .header-logo {
@@ -420,9 +412,18 @@ PLUGIN STYLES
 
 .header-user {
   grid-area: User;
+  z-index:100;
 }
 
 .header-submenu {
   grid-area: SubMenu;
   margin: 0 auto;
+}
+
+@media (min-width:768px) {
+  .header-grid {
+      grid-template-columns: 60px 1fr 60px;
+      grid-template-rows: 30px 30px;
+      grid-template-areas: 'Logo TopMenu User' 'Logo SubMenu User';
+  }
 }
