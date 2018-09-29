@@ -24,6 +24,6 @@
 		</div>
 	</div>
   <div class="header-submenu">
-		<?php get_template_part( 'parts/nav', 'bfc_submenu' ); ?>
+		<?php get_template_part( 'parts/nav', 'bfc-submenu' ); ?>
 	</div>
 </header>

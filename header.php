@@ -47,6 +47,6 @@
 							
 					 <!-- This navs will be applied to the topbar, above all content 
 						  To see additional nav styles, visit the /parts directory -->
-					 <?php get_template_part( 'parts/nav', 'bfc_top' ); ?>
+					 <?php get_template_part( 'parts/nav', 'bfc-top' ); ?>
 
 				</header> <!-- end .header -->
