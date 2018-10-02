@@ -393,6 +393,15 @@ PLUGIN STYLES
   background-position: 3px 4px;
 }
 
+@media (max-width:767px) {
+  .menu-item {
+    width: 30px;
+    margin: 0 5px;
+    overflow: hidden;
+    color: transparent;
+  }
+}
+
 .header-grid {
   display: grid;
   grid-template-columns: 40px 1fr 40px;
