@@ -1,7 +1,8 @@
 
 <header class="header-grid">
   <div class="header-logo">
-		<a href="<?php echo home_url(); ?>">Logo</a>
+		<a href="<?php echo home_url(); ?>"><img src="/wp-content/themes/bfcom/assets/images/logo9b.svg"
+     alt="Logo"/></a>
 	</div>
   <div class="header-topmenu">
 		<?php joints_top_nav(); ?>
