@@ -393,6 +393,14 @@ PLUGIN STYLES
   background-position: 3px 4px;
 }
 
+.menu-item-614.active > a,
+.dropdown .menu-item-614 > a {
+  background-image: url(/wp-content/themes/bfcom/assets/images/search.svg);
+  background-repeat: no-repeat;
+  padding-left: 30px;
+  background-position: 3px 4px;
+}
+
 @media (max-width:767px) {
   .menu-item {
     width: 30px;
