@@ -1,10 +1,10 @@
-<?php 
+<?php
 /**
  * The template for displaying search results pages
  *
  * For more info: https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  */
- 	
+	
 get_header(); ?>
 			
 	<div class="content">
@@ -20,8 +20,8 @@ get_header(); ?>
 			 
 					<!-- To see additional archive styles, visit the /parts directory -->
 					<?php get_template_part( 'parts/loop', 'archive' ); ?>
-				    
-				<?php endwhile; ?>	
+					
+				<?php endwhile; ?>
 
 					<?php joints_page_navi(); ?>
 					
@@ -29,11 +29,11 @@ get_header(); ?>
 				
 					<?php get_template_part( 'parts/content', 'missing' ); ?>
 						
-			    <?php endif; ?>
+				<?php endif; ?>
 	
-		    </main> <!-- end #main -->
+			</main> <!-- end #main -->
 		
-		    <?php get_sidebar(); ?>
+			<?php get_sidebar(); ?>
 		
 		</div> <!-- end #inner-content -->
 

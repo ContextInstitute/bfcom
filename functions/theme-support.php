@@ -16,12 +16,12 @@ function joints_theme_support() {
 	add_theme_support( 'title-tag' );
 	
 	// Add HTML5 Support
-	add_theme_support( 'html5', 
-	         array( 
-	         	'comment-list', 
-	         	'comment-form', 
-	         	'search-form', 
-	         ) 
+	add_theme_support( 'html5',
+			array(
+				'comment-list',
+				'comment-form',
+				'search-form',
+			)
 	);
 	
 	add_theme_support( 'custom-logo', array(
@@ -45,10 +45,10 @@ function joints_theme_support() {
 			'audio',             // audio
 			'chat'               // chat transcript
 		)
-	); 
+	);
 	
 	// Set the maximum allowed width for any content in the theme, like oEmbeds and images added to posts.
-	$GLOBALS['content_width'] = apply_filters( 'joints_theme_support', 1200 );	
+	$GLOBALS['content_width'] = apply_filters( 'joints_theme_support', 1200 );
 	
 } /* end theme support */
 
