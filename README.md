@@ -25,7 +25,7 @@ Interested? We’d love to have your involvement on any level:
 
 ## Status
 
-As a project, BFCom got its start in mid July 2016. Since then we have been gathering a team, doing prototyping and developing design guidelines (please see the Wiki for a [timeline](https://github.com/ContextInstitute/bfcom/wiki/Timeline) and our [public Google Drive](https://drive.google.com/drive/u/2/folders/0B4UY32-vtSy1ZUV6OWVUUWF4Yms) for details). 
+As a project, BFCom got its start in mid July 2016. Since then we have been gathering a team, doing prototyping and developing design guidelines (please see the Wiki for a [timeline](https://github.com/ContextInstitute/bfcom/wiki/Timeline) and our [public Google Drive](https://drive.google.com/drive/u/2/folders/0B4UY32-vtSy1ZUV6OWVUUWF4Yms) for details).
 
 As of December 2016, we’re just starting into coding. The files in the repo are the start of the child theme: bfcom-theme. This is still in the early stages of development, not even alpha yet.
 

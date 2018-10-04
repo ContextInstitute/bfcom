@@ -5,8 +5,8 @@ function joints_comments($comment, $args, $depth) {
 	<li <?php comment_class('panel'); ?>>
 		<div class="media-object">
 			<div class="media-object-section">
-			    <?php echo get_avatar( $comment, 75 ); ?>
-			  </div>
+				<?php echo get_avatar( $comment, 75 ); ?>
+			</div>
 			<div class="media-object-section">
 				<article id="comment-<?php comment_ID(); ?>">
 					<header class="comment-author">
