@@ -442,5 +442,7 @@ PLUGIN STYLES
       grid-template-columns: 60px 1fr 60px;
       grid-template-rows: 30px 30px;
       grid-template-areas: 'Logo TopMenu User' 'Logo SubMenu User';
+      border-bottom: 1px solid grey;
+      padding-bottom: 20px;
   }
 }
