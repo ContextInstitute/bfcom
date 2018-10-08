@@ -413,9 +413,11 @@ PLUGIN STYLES
 .header-grid {
   display: grid;
   grid-template-columns: 40px 1fr 40px;
-  grid-template-rows: 40px 40px;
+  grid-template-rows: 20px 20px;
   grid-template-areas: 'Logo TopMenu User' 'SubMenu SubMenu SubMenu';
   margin: 10px 15px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 30px;
 }
 
 .header-logo {
