@@ -401,23 +401,6 @@ PLUGIN STYLES
   background-position: 3px 4px;
 }
 
-@media (max-width:767px) {
-  .menu-item {
-    width: 30px;
-    margin: 0 5px;
-    overflow: hidden;
-    color: transparent;
-  }
-}
-
-.header-grid {
-  display: grid;
-  grid-template-columns: 40px 1fr 40px;
-  grid-template-rows: 40px 40px;
-  grid-template-areas: 'Logo TopMenu User' 'SubMenu SubMenu SubMenu';
-  margin: 10px 15px;
-}
-
 .header-logo {
   grid-area: Logo;
 }
@@ -437,12 +420,31 @@ PLUGIN STYLES
   margin: 0 auto;
 }
 
+.header-grid {
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
+  grid-template-rows: 40px 40px;
+  grid-template-areas: 'Logo TopMenu User' 'SubMenu SubMenu SubMenu';
+  margin: 10px 15px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 30px;
+ }
+
 @media (min-width:768px) {
   .header-grid {
-      grid-template-columns: 60px 1fr 60px;
-      grid-template-rows: 30px 30px;
-      grid-template-areas: 'Logo TopMenu User' 'Logo SubMenu User';
-      border-bottom: 1px solid grey;
-      padding-bottom: 20px;
+    grid-template-columns: 60px 1fr 60px;
+    grid-template-rows: 30px 30px;
+    grid-template-areas: 'Logo TopMenu User' 'Logo SubMenu User';
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 30px;
+  }
+}
+
+@media (max-width:767px) {
+  .menu-item {
+    width: 30px;
+    margin: 0 5px;
+    overflow: hidden;
+    color: transparent;
   }
 }
