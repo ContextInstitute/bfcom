@@ -455,5 +455,9 @@ PLUGIN STYLES
 }
 
 .forum.single-item .page-title {
-	font-size: 1.9375rem;
+	font-size: 1rem;
+}
+
+.item-body h3 {
+	font-size: 3rem;
 }
