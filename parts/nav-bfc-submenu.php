@@ -1,4 +1,4 @@
-<?php if ( bp_nouveau_has_nav() ) : ?>
+<?php if ( bfc_nouveau_has_nav() ) : ?>
 <nav class="main-navs no-ajax bp-navs single-screen-navs horizontal users-nav buddypress-wrap" id="object-nav" role="navigation" aria-label="User menu">
 	
 	<ul id="menu-subnav-1" class="medium-horizontal menu dropdown" >
