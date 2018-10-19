@@ -453,3 +453,15 @@ PLUGIN STYLES
 			grid-template-areas: 'Logo TopMenu User' 'Logo SubMenu User';
 	}
 }
+
+#bbpress-forums div.odd {
+  background-color: #ffffff;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 30px;
+}
+
+#bbpress-forums div.even {
+  background-color: #ffffff;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 30px;
+}
