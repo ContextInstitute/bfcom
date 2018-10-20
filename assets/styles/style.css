@@ -77,6 +77,18 @@ POSTS & CONTENT STYLES
 		background-color: #14679e;
 		color: #fefefe; }
 
+#bbpress-forums div.odd {
+    background-color: #ffffff;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 30px;
+}
+
+#bbpress-forums div.even {
+    background-color: #ffffff;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 30px;
+}
+
 /*********************
 IMAGE GALLERY STYLES
 *********************/
@@ -452,16 +464,4 @@ PLUGIN STYLES
 			grid-template-rows: 30px 30px;
 			grid-template-areas: 'Logo TopMenu User' 'Logo SubMenu User';
 	}
-}
-
-#bbpress-forums div.odd {
-  background-color: #ffffff;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 30px;
-}
-
-#bbpress-forums div.even {
-  background-color: #ffffff;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 30px;
 }
