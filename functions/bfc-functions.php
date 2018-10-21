@@ -24,7 +24,21 @@ function bfc_nav_configure() {
 		foreach ( array_keys( $hide_tabs ) as $tab ) {
 			bp_core_remove_subnav_item( $parent_nav_slug, $tab, 'groups' );
 		}   
-    }
+    } elseif ( bp_is_user() ) {
+		$hide_tabs = array(             
+        	'front'    => 1,
+        	'invite-anyone'    => 1,
+        	'following'    => 1,
+        	'followers'    => 1,
+        	'forums'   		   => 1,
+        );
+                     
+		//Remove the nav items
+		foreach ( array_keys( $hide_tabs ) as $tab ) {
+			bp_core_remove_nav_item( $tab, 'members' );
+		}   
+
+	}
 }    
 add_action( 'bp_actions', 'bfc_nav_configure' );
 
@@ -109,7 +123,7 @@ function bfc_nouveau_has_nav( $args = array() ) {
 				$args = array( 'show_for_displayed_user' => true );
 			}
 			// Reorder the user's primary nav according to the customizer setting.
-			// bp_nouveau_set_nav_item_order( $user_nav, bp_nouveau_get_appearance_settings( 'user_nav_order' ) );
+			bp_nouveau_set_nav_item_order( $user_nav, array('profile','notifications','messages','groups','docs','activity','settings'));
 			$nav = $user_nav->get_primary( $args );
 		}
 	} elseif ( ! empty( $bp_nouveau->object_nav ) ) {
