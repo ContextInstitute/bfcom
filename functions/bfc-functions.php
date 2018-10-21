@@ -26,7 +26,6 @@ function bfc_nav_configure() {
 		}   
     } elseif ( bp_is_user() ) {
 		$hide_tabs = array(             
-        	'front'    => 1,
         	'invite-anyone'    => 1,
         	'following'    => 1,
         	'followers'    => 1,
@@ -95,7 +94,7 @@ function bfc_nouveau_has_nav( $args = array() ) {
 			$parent_slug .= '_manage';
 		/**
 		 * If it's not the Admin tabs, reorder the Group's nav according to the
-		 * customizer setting.
+		 * following list.
 		 */
 		} else {
 			bp_nouveau_set_nav_item_order( $group_nav, array('home','forum','members','docs','activity','admin'), $parent_slug );
