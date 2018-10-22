@@ -453,3 +453,12 @@ PLUGIN STYLES
 			grid-template-areas: 'Logo TopMenu User' 'Logo SubMenu User';
 	}
 }
+
+.forum.single-item .page-title {
+	font-size: 1rem;
+}
+
+#item-body h3 {
+	font-size: 3rem;
+	margin: 0;
+}
