@@ -467,3 +467,12 @@ PLUGIN STYLES
     border-bottom: 1px solid #ddd;
     padding-bottom: 30px;
 }
+
+.forum.single-item .page-title {
+	font-size: 1rem;
+}
+
+#item-body h3 {
+	font-size: 3rem;
+	margin: 0;
+}
