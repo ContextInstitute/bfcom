@@ -459,6 +459,20 @@ PLUGIN STYLES
 	}
 }
 
+/* FORUMS */
+
+#bbpress-forums div.odd {
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 30px;
+}
+
+#bbpress-forums div.even {
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 30px;
+}
+
 .forum.single-item .page-title {
 	font-size: 1rem;
 }
