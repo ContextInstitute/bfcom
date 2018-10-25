@@ -448,7 +448,7 @@ PLUGIN STYLES
 
 .header-submenu .bp-navs {
 	z-index:100;
-	overflow: visible	
+	overflow: visible;
 }
 
 @media (min-width:768px) {
@@ -462,15 +462,15 @@ PLUGIN STYLES
 /* FORUMS */
 
 #bbpress-forums div.odd {
-    background-color: #ffffff;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 30px;
+	background-color: #ffffff;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 30px;
 }
 
 #bbpress-forums div.even {
-    background-color: #ffffff;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 30px;
+	background-color: #ffffff;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 30px;
 }
 
 .forum.single-item .page-title {
@@ -483,11 +483,11 @@ PLUGIN STYLES
 }
 
 #bbpress-forums img.avatar {
-  border-radius: 10px;
+	border-radius: 10px;
 }
 
 #bbpress-forums .bbp-reply-post-date {
-  font-size: 8pt;
-  font-style: italic;
-  color: #808080;
+	font-size: 8pt;
+	font-style: italic;
+	color: #808080;
 }
