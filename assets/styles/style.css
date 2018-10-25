@@ -446,6 +446,11 @@ PLUGIN STYLES
 	margin: 0 auto;
 }
 
+.header-submenu .bp-navs {
+	z-index:100;
+	overflow: visible	
+}
+
 @media (min-width:768px) {
 	.header-grid {
 			grid-template-columns: 60px 1fr 60px;
