@@ -481,3 +481,13 @@ PLUGIN STYLES
 	font-size: 3rem;
 	margin: 0;
 }
+
+#bbpress-forums img.avatar {
+  border-radius: 10px;
+}
+
+#bbpress-forums .bbp-reply-post-date {
+  font-size: 8pt;
+  font-style: italic;
+  color: #808080;
+}
