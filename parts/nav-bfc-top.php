@@ -10,7 +10,7 @@
 		<a href="/wp-login.php?action=login">Log in</a>
 	<?php else : ?>
 		<div class="header-user">
-			<a href="<?php bp_loggedin_user_link(); ?>" data-toggle="user-dropdown"><?php bp_loggedin_user_avatar( 'type=full' ); ?></a>
+			<span data-toggle="user-dropdown"><?php bp_loggedin_user_avatar( 'type=full' ); ?></span>
 			<div class="dropdown-pane" id="user-dropdown" data-dropdown data-hover="true" data-hover-pane="true" data-auto-focus="true">
 				<ul>
 					<li><a href="/wp-admin/">Admin Dashboard</a></li>

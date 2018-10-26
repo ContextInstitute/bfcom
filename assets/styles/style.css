@@ -398,8 +398,8 @@ PLUGIN STYLES
 	background-position: 3px 4px;
 }
 
-.menu-item-614.active > a,
-.dropdown .menu-item-614 > a {
+.menu-item-615.active > a,
+.dropdown .menu-item-615 > a {
 	background-image: url(/wp-content/themes/bfcom/assets/images/search.svg);
 	background-repeat: no-repeat;
 	padding-left: 30px;
@@ -407,7 +407,7 @@ PLUGIN STYLES
 }
 
 @media (max-width:767px) {
-	.menu-item {
+	.header-topmenu .menu-item {
 		width: 30px;
 		margin: 0 5px;
 		overflow: hidden;
@@ -448,7 +448,177 @@ PLUGIN STYLES
 
 .header-submenu .bp-navs {
 	z-index:100;
-	overflow: visible
+	overflow: visible;
+	display: flex;
+}
+
+#more {
+	display: none;
+}
+
+@media (max-width:1200px) {
+	.bp-personal-nav #more {
+		display: contents;
+	}
+
+	.bp-personal-nav #menu-subnav-1 li:nth-child(n+10) {
+		display: none;
+	}
+
+	.bp-personal-nav .more-ul li {
+		display: none;
+	}
+	
+	.bp-personal-nav .more-ul li:nth-child(n+10) {
+		display: contents;
+	}
+}
+
+@media (max-width:1075px) {
+	.bp-personal-nav #menu-subnav-1 li:nth-child(n+9) {
+		display: none;
+	}
+
+	.bp-personal-nav .more-ul li:nth-child(n+9) {
+		display: contents;
+	}
+	
+	.bp-group-nav #more {
+		display: contents;
+	}
+
+	.bp-group-nav #menu-subnav-1 li:nth-child(n+8) {
+		display: none;
+	}
+
+	.bp-group-nav .more-ul li {
+		display: none;
+	}
+	
+	.bp-group-nav .more-ul li:nth-child(n+8) {
+		display: contents;
+	}
+}
+
+@media (max-width:980px) {
+	.bp-personal-nav #menu-subnav-1 li:nth-child(n+8) {
+		display: none;
+	}
+
+	.bp-personal-nav .more-ul li:nth-child(n+8) {
+		display: contents;
+	}
+}
+
+@media (max-width:900px) {
+	.bp-personal-nav #menu-subnav-1 li:nth-child(n+7) {
+		display: none;
+	}
+
+	.bp-personal-nav .more-ul li:nth-child(n+7) {
+		display: contents;
+	}
+
+	.bp-group-nav #menu-subnav-1 li:nth-child(n+7) {
+		display: none;
+	}
+
+	.bp-group-nav .more-ul li:nth-child(n+7) {
+		display: contents;
+	}
+
+}
+
+@media (max-width:810px) {
+	.bp-personal-nav #menu-subnav-1 li:nth-child(n+6) {
+		display: none;
+	}
+
+	.bp-personal-nav .more-ul li:nth-child(n+6) {
+		display: contents;
+	}
+
+	.bp-group-nav #menu-subnav-1 li:nth-child(n+6) {
+		display: none;
+	}
+
+	.bp-group-nav .more-ul li:nth-child(n+6) {
+		display: contents;
+	}
+}
+
+@media (max-width:670px) {
+	.bp-personal-nav #menu-subnav-1 li:nth-child(n+5) {
+		display: none;
+	}
+
+	.bp-personal-nav .more-ul li:nth-child(n+5) {
+		display: contents;
+	}
+
+	.bp-group-nav #menu-subnav-1 li:nth-child(n+5) {
+		display: none;
+	}
+
+	.bp-group-nav .more-ul li:nth-child(n+5) {
+		display: contents;
+	}
+
+}
+
+@media (max-width:600px) {
+	.bp-personal-nav #menu-subnav-1 li:nth-child(n+4) {
+		display: none;
+	}
+
+	.bp-personal-nav .more-ul li:nth-child(n+4) {
+		display: contents;
+	}
+
+	.bp-group-nav #menu-subnav-1 li:nth-child(n+4) {
+		display: none;
+	}
+
+	.bp-group-nav .more-ul li:nth-child(n+4) {
+		display: contents;
+	}
+}
+
+@media (max-width:500px) {
+	.bp-personal-nav #menu-subnav-1 li:nth-child(n+3) {
+		display: none;
+	}
+
+	.bp-personal-nav .more-ul li:nth-child(n+3) {
+		display: contents;
+	}
+
+	.bp-group-nav #menu-subnav-1 li:nth-child(n+3) {
+		display: none;
+	}
+
+	.bp-group-nav .more-ul li:nth-child(n+3) {
+		display: contents;
+	}
+
+}
+
+@media (max-width:420px) {
+	.bp-personal-nav #menu-subnav-1 li:nth-child(n+2) {
+		display: none;
+	}
+
+	.bp-personal-nav .more-ul li:nth-child(n+2) {
+		display: contents;
+	}
+
+	.bp-group-nav #menu-subnav-1 li:nth-child(n+2) {
+		display: none;
+	}
+
+	.bp-group-nav .more-ul li:nth-child(n+2) {
+		display: contents;
+	}
 }
 
 @media (min-width:768px) {
@@ -462,15 +632,15 @@ PLUGIN STYLES
 /* FORUMS */
 
 #bbpress-forums div.odd {
-    background-color: #ffffff;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 30px;
+	background-color: #ffffff;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 30px;
 }
 
 #bbpress-forums div.even {
-    background-color: #ffffff;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 30px;
+	background-color: #ffffff;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 30px;
 }
 
 .forum.single-item .page-title {
@@ -483,21 +653,11 @@ PLUGIN STYLES
 }
 
 #bbpress-forums img.avatar {
-  border-radius: 10px;
+	border-radius: 10px;
 }
 
 #bbpress-forums .bbp-reply-post-date {
-  font-size: 8pt;
-  font-style: italic;
-  color: #808080;
-}
-
-.bbp-meta {
-	position: absolute;
-	bottom: 0;
-	right: 0;
-}
-
-.bbp-reply-content {
-	position: relative;
+	font-size: 8pt;
+	font-style: italic;
+	color: #808080;
 }
