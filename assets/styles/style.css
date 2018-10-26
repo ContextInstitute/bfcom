@@ -407,7 +407,7 @@ PLUGIN STYLES
 }
 
 @media (max-width:767px) {
-	.menu-item {
+	.header-topmenu .menu-item {
 		width: 30px;
 		margin: 0 5px;
 		overflow: hidden;
@@ -449,7 +449,7 @@ PLUGIN STYLES
 .header-submenu .bp-navs {
 	z-index:100;
 	overflow: visible;
-	display: flex
+	display: flex;
 }
 
 #more {
