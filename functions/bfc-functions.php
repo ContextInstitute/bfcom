@@ -10,32 +10,6 @@ function bfc_nav_configure() {
 	global $bp;
 	if( bp_is_group() ) {
 		$bp->groups->nav->edit_nav( array( 'name' => __( 'G-Dash', 'buddypress' )), 'home', bp_current_item() );
-
-		// comment those you want to show
-	   $hide_tabs = array(             
-			'announcements'    => 1,
-			'invite-anyone'    => 1,
-			'notifications'    => 1,
-		);
-
-		$parent_nav_slug = bp_get_current_group_slug();
-
-		//Remove the nav items
-		foreach ( array_keys( $hide_tabs ) as $tab ) {
-			bp_core_remove_subnav_item( $parent_nav_slug, $tab, 'groups' );
-		}   
-	} elseif ( bp_is_user() ) {
-		$hide_tabs = array(             
-			'invite-anyone'	=> 1,
-			'following'		=> 1,
-			'followers'		=> 1,
-			'forums'		=> 1,
-		);
-		//Remove the nav items
-		foreach ( array_keys( $hide_tabs ) as $tab ) {
-			bp_core_remove_nav_item( $tab, 'members' );
-		}
-
 	}
 }
 add_action( 'bp_actions', 'bfc_nav_configure' );
