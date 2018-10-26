@@ -448,7 +448,7 @@ PLUGIN STYLES
 
 .header-submenu .bp-navs {
 	z-index:100;
-	overflow: visible	
+	overflow: visible
 }
 
 @media (min-width:768px) {
@@ -490,4 +490,14 @@ PLUGIN STYLES
   font-size: 8pt;
   font-style: italic;
   color: #808080;
+}
+
+.bbp-meta {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.bbp-reply-content {
+	position: relative;
 }
