@@ -468,7 +468,7 @@ PLUGIN STYLES
 	.bp-personal-nav .more-ul li {
 		display: none;
 	}
-	
+
 	.bp-personal-nav .more-ul li:nth-child(n+10) {
 		display: contents;
 	}
@@ -482,7 +482,7 @@ PLUGIN STYLES
 	.bp-personal-nav .more-ul li:nth-child(n+9) {
 		display: contents;
 	}
-	
+
 	.bp-group-nav #more {
 		display: contents;
 	}
@@ -494,7 +494,7 @@ PLUGIN STYLES
 	.bp-group-nav .more-ul li {
 		display: none;
 	}
-	
+
 	.bp-group-nav .more-ul li:nth-child(n+8) {
 		display: contents;
 	}
@@ -670,4 +670,118 @@ PLUGIN STYLES
 
 .bbp-reply-content {
 	position: relative;
+}
+
+/* ACTION ICONS FOR POSTS */
+
+#bbpress-forums div.bbp-reply-content .bbp-topic-edit-link {
+  background-image: url(/wp-content/themes/bfcom/assets/images/edit.svg);
+  background-repeat: no-repeat;
+  background-size: 12px 12px;
+  background-position: center;
+  width: 10px;
+  overflow: hidden;
+  color: transparent;
+}
+
+#bbpress-forums div.bbp-reply-content .bbp-topic-close-link {
+  background-image: url(/wp-content/themes/bfcom/assets/images/close.svg);
+  background-repeat: no-repeat;
+  background-size: 12px 12px;
+  background-position: center;
+  width: 10px;
+  overflow: hidden;
+  color: transparent;
+}
+
+#bbpress-forums div.bbp-reply-content .bbp-topic-sticky-link {
+  background-image: url(/wp-content/themes/bfcom/assets/images/stick.svg);
+  background-repeat: no-repeat;
+  background-size: 12px 12px;
+  background-position: center;
+  width: 10px;
+  overflow: hidden;
+  color: transparent;
+}
+
+#bbpress-forums div.bbp-reply-content .bbp-topic-merge-link {
+  background-image: url(/wp-content/themes/bfcom/assets/images/merge.svg);
+  background-repeat: no-repeat;
+  background-size: 12px 12px;
+  background-position: center;
+  width: 10px;
+  overflow: hidden;
+  color: transparent;
+}
+
+#bbpress-forums div.bbp-reply-content .bbp-topic-trash-link {
+  background-image: url(/wp-content/themes/bfcom/assets/images/trash.svg);
+  background-repeat: no-repeat;
+  background-size: 12px 12px;
+  background-position: center;
+  width: 10px;
+  overflow: hidden;
+  color: transparent;
+}
+
+#bbpress-forums div.bbp-reply-content .bbp-topic-reply-link {
+  background-image: url(/wp-content/themes/bfcom/assets/images/reply.svg);
+  background-repeat: no-repeat;
+  background-size: 12px 12px;
+  background-position: center;
+  width: 10px;
+  overflow: hidden;
+  color: transparent;
+}
+
+/* ACTION ICONS FOR POST REPLIES */
+
+#bbpress-forums div.bbp-reply-content .bbp-reply-edit-link {
+  background-image: url(/wp-content/themes/bfcom/assets/images/edit.svg);
+  background-repeat: no-repeat;
+  background-size: 12px 12px;
+  background-position: center;
+  width: 10px;
+  overflow: hidden;
+  color: transparent;
+}
+
+#bbpress-forums div.bbp-reply-content .bbp-reply-move-link {
+  background-image: url(/wp-content/themes/bfcom/assets/images/move.svg);
+  background-repeat: no-repeat;
+  background-size: 12px 12px;
+  background-position: center;
+  width: 10px;
+  overflow: hidden;
+  color: transparent;
+}
+
+#bbpress-forums div.bbp-reply-content .bbp-topic-split-link {
+  background-image: url(/wp-content/themes/bfcom/assets/images/split.svg);
+  background-repeat: no-repeat;
+  background-size: 12px 12px;
+  background-position: center;
+  width: 10px;
+  overflow: hidden;
+  color: transparent;
+}
+
+#bbpress-forums div.bbp-reply-content .bbp-reply-trash-link {
+  background-image: url(/wp-content/themes/bfcom/assets/images/trash.svg);
+  background-repeat: no-repeat;
+  background-size: 12px 12px;
+  background-position: center;
+  width: 10px;
+  overflow: hidden;
+  color: transparent;
+}
+
+#bbpress-forums div.bbp-reply-content .bbp-reply-to-link {
+  background-image: url(/wp-content/themes/bfcom/assets/images/reply.svg);
+  background-repeat: no-repeat;
+  background-size: 12px 12px;
+  background-position: center;
+  width: 10px;
+  overflow: hidden;
+  color: transparent;
 }

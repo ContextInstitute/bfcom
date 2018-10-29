@@ -17,7 +17,7 @@ add_action( 'bp_actions', 'bfc_nav_configure' );
 
 /**
  * This function, bfc_nouveau_has_nav(), is based on bp_nouveau_has_nav() in /wp-content/plugins/buddypress/bp-templates/bp-nouveau/includes/template-tags.php
- * 
+ *
  * Init the Navigation Loop and check it has items.
  *
  * @since 3.0.0
@@ -123,3 +123,41 @@ function bfc_nouveau_has_nav( $args = array() ) {
 	$bp_nouveau->current_nav_index = 0;
 	return true;
 }
+
+/* Filter Action menu for posts */
+function bfc_filter_bbp_actions_topic_links( $array, $r_id ) {
+
+    // remove 'spam' reply menu item
+  $array = str_replace('class="bbp-topic-spam-link">Spam</a> | ', 'class="bbp-topic-spam-link"></a>', $array);
+
+  // add title to anchor to show up as tooltips for post menu icons
+  $array = str_replace('>Edit<', 'title="Edit this item">Edit<', $array);
+  $array = str_replace('>Close<', 'title="Close this item">Close<', $array);
+  $array = str_replace('>Stick<', 'title="Stick this item">Stick<', $array);
+  $array = str_replace('>Merge<', 'title="Merge this item">Merge<', $array);
+  $array = str_replace('>Trash<', 'title="Trash to this item">Trash<', $array);
+  $array = str_replace('>Reply<', 'title="Reply to this item">Reply<', $array);
+
+    return $array;
+};
+
+// add the filter
+add_filter( 'bbp_get_topic_admin_links', 'bfc_filter_bbp_actions_topic_links', 10, 2 );
+
+/* Filter Reply menu for posts */
+function bfc_filter_bbp_reply_admin_links( $array, $r_id ) {
+
+    // remove 'spam' reply menu item
+  $array = str_replace('class="bbp-reply-spam-link">Spam</a> | ', 'class="bbp-reply-spam-link"></a>', $array);
+
+  // add title to anchor to show up as tooltips for reply menu icons
+  $array = str_replace('>Edit<', 'title="Edit this item">Edit<', $array);
+  $array = str_replace('>Move<', 'title="Move this item">Move<', $array);
+  $array = str_replace('>Split<', 'title="Split this item">Split<', $array);
+  $array = str_replace('>Reply<', 'title="Reply to this item">Reply<', $array);
+
+    return $array;
+};
+
+// add the filter
+add_filter( 'bbp_get_reply_admin_links', 'bfc_filter_bbp_reply_admin_links', 10, 2 );
