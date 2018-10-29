@@ -661,3 +661,13 @@ PLUGIN STYLES
 	font-style: italic;
 	color: #808080;
 }
+
+.bbp-meta {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.bbp-reply-content {
+	position: relative;
+}
