@@ -17,7 +17,7 @@ add_action( 'bp_actions', 'bfc_nav_configure' );
 
 /**
  * This function, bfc_nouveau_has_nav(), is based on bp_nouveau_has_nav() in /wp-content/plugins/buddypress/bp-templates/bp-nouveau/includes/template-tags.php
- * 
+ *
  * Init the Navigation Loop and check it has items.
  *
  * @since 3.0.0
@@ -123,3 +123,62 @@ function bfc_nouveau_has_nav( $args = array() ) {
 	$bp_nouveau->current_nav_index = 0;
 	return true;
 }
+
+/* Update post actions menu by removing Spam item */
+function bfc_change_topic_admin_links ($r) {
+	$r['links'] = apply_filters( 'bfc_topic_admin_links', array(
+		'edit' => bbp_get_topic_edit_link ( $r ),
+		'close' => bbp_get_topic_close_link( $r ),
+		'stick' => bbp_get_topic_stick_link( $r ),
+		'merge' => bbp_get_topic_merge_link( $r ),
+		'trash' => bbp_get_topic_trash_link( $r ),
+		'reply' => bbp_get_topic_reply_link( $r )
+		), $r['id'] );
+	return $r['links'] ;
+}
+add_filter ('bbp_topic_admin_links', 'bfc_change_topic_admin_links' ) ;
+
+/* Replace post actions menu text with icons, add title to show up as tooltips */
+function bfc_filter_bbp_actions_topic_links( $array, $r_id ) {
+
+	$array = str_replace('>Edit<', 'title="Edit this item"><img src="/wp-content/themes/bfcom/assets/images/edit.svg"><', $array);
+	$array = str_replace('>Close<', 'title="Close this item"><img src="/wp-content/themes/bfcom/assets/images/close.svg"><', $array);
+	$array = str_replace('>Stick<', 'title="Stick this item"><img src="/wp-content/themes/bfcom/assets/images/stick.svg"><', $array);
+	$array = str_replace('>Merge<', 'title="Merge this item"><img src="/wp-content/themes/bfcom/assets/images/merge.svg"><', $array);
+	$array = str_replace('>Trash<', 'title="Trash this item"><img src="/wp-content/themes/bfcom/assets/images/trash.svg"><', $array);
+	$array = str_replace('>Reply<', 'title="Reply to this item"><img src="/wp-content/themes/bfcom/assets/images/reply.svg"><', $array);
+
+    return $array;
+};
+
+// add the filter
+add_filter( 'bbp_get_topic_admin_links', 'bfc_filter_bbp_actions_topic_links', 10, 2 );
+
+/* Update post reply menu by removing Spam item */
+function bfc_change_admin_links ($r) {
+	$r['links'] = apply_filters( 'bfc_reply_admin_links', array(
+		'edit'  => bbp_get_reply_edit_link ( $r ),
+		'move'  => bbp_get_reply_move_link ( $r ),
+		'split' => bbp_get_topic_split_link( $r ),
+		'trash' => bbp_get_reply_trash_link( $r ),
+		'reply' => bbp_get_reply_to_link   ( $r )
+		), $r['id'] );
+	return $r['links'] ;
+}
+add_filter ('bbp_reply_admin_links', 'bfc_change_admin_links' ) ;
+
+/* Replace post replies menu text with icons, add title to show up as tooltips */
+function bfc_filter_bbp_reply_admin_links( $array, $r_id ) {
+
+	// add title to anchor to show up as tooltips for reply menu icons
+	$array = str_replace('>Edit<', 'title="Edit this item"><img src="/wp-content/themes/bfcom/assets/images/edit.svg"><', $array);
+	$array = str_replace('>Move<', 'title="Move this item"><img src="/wp-content/themes/bfcom/assets/images/move.svg"><', $array);
+	$array = str_replace('>Split<', 'title="Split this item"><img src="/wp-content/themes/bfcom/assets/images/split.svg"><', $array);
+	$array = str_replace('>Trash<', 'title="Trash this item"><img src="/wp-content/themes/bfcom/assets/images/trash.svg"><', $array);
+	$array = str_replace('>Reply<', 'title="Reply to this item"><img src="/wp-content/themes/bfcom/assets/images/reply.svg"><', $array);
+
+    return $array;
+};
+
+// add the filter
+add_filter( 'bbp_get_reply_admin_links', 'bfc_filter_bbp_reply_admin_links', 10, 2 );
