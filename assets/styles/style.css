@@ -435,7 +435,7 @@ body {
 	grid-template-areas: 'Logo TopMenu User' 'SubMenu SubMenu SubMenu';
 	margin: 10px 15px;
 	border-bottom: 1px solid #ccc;
-	padding-bottom: 30px;
+	padding-bottom: 10px;
 }
 
 .header-logo {
@@ -655,11 +655,11 @@ body {
 }
 
 .forum.single-item .page-title {
-	font-size: 1rem;
+	font-size: 16px;
 }
 
-#item-body h3 {
-	font-size: 3rem;
+#bbpress-forums h3 {
+	font-size: 40px;
 	margin: 0;
 }
 
@@ -677,6 +677,7 @@ body {
 	position: absolute;
 	bottom: 0;
 	right: 0;
+	opacity: 0.25;
 }
 
 .bbp-reply-content {
@@ -684,4 +685,25 @@ body {
 	font-family: Merriweather,Georgia,serif;
 	font-size: 17px;
 	max-width: 640px;
+}
+
+.bp_group #item-body {
+	margin-top: 8px;
+}
+
+.bbp-body {
+	padding-bottom: 10px;
+}
+
+#bbpress-forums div.even,
+#bbpress-forums div.odd {
+	padding-bottom: 10px;
+}
+
+#bbpress-forums div.bbp-reply-author a.bbp-author-name {
+    font-size: 13px;
+    margin-left: 0px;
+    margin-right: 0px;
+    line-height: 13px;
+    margin-top: 5px;
 }
