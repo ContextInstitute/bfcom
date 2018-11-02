@@ -356,6 +356,12 @@ PLUGIN STYLES
 /*    BFCom styles   */
 /*********************/
 
+/* PAGE AND LAYOUT */
+
+body {
+	font-family: Pangram,Avenir,Helvetica,sans-serif;
+}
+
 /* MENU */
 
 .menu-item-home.active > a,
@@ -670,4 +676,6 @@ PLUGIN STYLES
 
 .bbp-reply-content {
 	position: relative;
+	font-family: Merriweather,Georgia,serif;
+	font-size: 17px;
 }
