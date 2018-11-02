@@ -362,6 +362,11 @@ body {
 	font-family: Pangram,Avenir,Helvetica,sans-serif;
 }
 
+.groups .content {
+	margin: 0 auto;
+	max-width: 840px;
+}
+
 /* MENU */
 
 .menu-item-home.active > a,
@@ -678,4 +683,5 @@ body {
 	position: relative;
 	font-family: Merriweather,Georgia,serif;
 	font-size: 17px;
+	max-width: 640px;
 }
