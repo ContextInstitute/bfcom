@@ -671,3 +671,132 @@ body {
 	line-height: 13px;
 	margin-top: 5px;
 }
+
+/* This is taken from /wp-content/plugins/bbpress/templates/default/css/bbpress.css starting at line 1140 */
+/* Changed the break-point from 420 to 640. 420 was too narrow. 640 is the max-width for the reply text and this covers larger phones. */
+/* Other changes noted below. This may need further review and tweaking for the forum index page */
+
+@media only screen and (max-width: 640px) {
+	#bbpress-forums div.bbp-topic-tags {
+		clear: left;
+		float: left;
+	}
+	div.bbp-search-form input,
+	div.bbp-search-form button {
+		font-size: 11px;
+		padding: 2px;
+	}
+	li.bbp-forum-info,
+	li.bbp-topic-title {
+		width: 45%;
+	}
+	li.bbp-forum-topic-count,
+	li.bbp-forum-reply-count,
+	li.bbp-topic-voice-count,
+	li.bbp-topic-reply-count {
+		width: 15%;
+	}
+	span.bbp-reply-post-date {
+		/* float was left but that messed up the mobile layout of author and date */
+		float: none;
+	}
+	span.bbp-admin-links {
+		clear: left;
+		float: left;
+	}
+	#bbpress-forums .bbp-forums-list li {
+		display: block;
+		font-size: 11px;
+	}
+	#bbpress-forums .bbp-body div.bbp-reply-author {
+		margin: -15px 10px 10px;
+		min-height: 100px;
+		padding-left: 80px;
+		position: relative;
+		text-align: left;
+		width: 100%;
+	}
+	#bbpress-forums div.bbp-reply-author a.bbp-author-name {
+		clear: none;
+		/* display was inline-block but that messed up the mobile layout of author and date */
+		display: block;
+		margin-left: 0;
+		word-wrap: break-word;
+	}
+	#bbpress-forums div.bbp-reply-author img.avatar {
+		position: absolute;
+		top: 15px;
+		left: 0;
+		width: 60px;
+		height: auto;
+	}
+	#bbpress-forums div.bbp-reply-author .bbp-author-role {
+		font-size: 12px;
+		font-style: normal;
+	}
+	#bbpress-forums .bbp-body div.bbp-reply-content {
+		clear: both;
+		margin: 10px;
+		padding: 0;
+	}
+	#bbpress-forums div.bbp-reply-content p {
+		margin-bottom: 1em;
+	}
+	div.bbp-submit-wrapper {
+		float: left;
+	}
+	#bbpress-forums fieldset.bbp-form {
+		padding: 0 10px 10px;
+	}
+	#bbpress-forums #bbp-user-body {
+		clear: both;
+		margin-left: 0;
+		word-wrap: break-word;
+	}
+}
+
+/* Fluid type between 320 and 640. May need to be expanded to handle other heading sizes */
+@media only screen and (min-width: 320px) {
+	.bbp-reply-content {
+		font-size: calc(15px + 2*((100vw - 320px)/320));
+	}
+
+	#bbpress-forums h3 {
+		font-size: calc(32px + 8*((100vw - 320px)/320));
+	}
+
+	.header-grid,
+	.forum.single-item .page-title {
+		font-size: calc(14px + 2*((100vw - 320px)/320));
+	}
+}
+
+@media only screen and (min-width: 640px) {
+	.bbp-reply-content {
+		font-size: 17px;
+	}
+
+	#bbpress-forums h3 {
+		font-size: 40px;
+	}
+
+	.header-grid,
+	.forum.single-item .page-title {
+		font-size: 16px;
+	}
+}
+
+@media only screen and (max-width: 319px) {
+	.bbp-reply-content {
+		font-size: 15px;
+	}
+
+	#bbpress-forums h3 {
+		font-size: 32px;
+	}
+
+	.header-grid,
+	.forum.single-item .page-title {
+		font-size: 14px;
+	}
+}
