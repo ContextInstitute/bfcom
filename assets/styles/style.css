@@ -672,6 +672,10 @@ body {
 	margin-top: 5px;
 }
 
+#bbpress-forums div.bbp-reply-content {
+	padding: 12px 12px 14px 0;
+}
+
 /* This is taken from /wp-content/plugins/bbpress/templates/default/css/bbpress.css starting at line 1140 */
 /* Changed the break-point from 420 to 640. 420 was too narrow. 640 is the max-width for the reply text and this covers larger phones. */
 /* Other changes noted below. This may need further review and tweaking for the forum index page */
@@ -737,7 +741,7 @@ body {
 	#bbpress-forums .bbp-body div.bbp-reply-content {
 		clear: both;
 		margin: 10px;
-		padding: 0;
+		padding: 0 0 14px;
 	}
 	#bbpress-forums div.bbp-reply-content p {
 		margin-bottom: 1em;
