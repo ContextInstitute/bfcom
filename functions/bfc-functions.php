@@ -182,3 +182,25 @@ function bfc_filter_bbp_reply_admin_links( $array, $r_id ) {
 
 // add the filter
 add_filter( 'bbp_get_reply_admin_links', 'bfc_filter_bbp_reply_admin_links', 10, 2 );
+
+//removes 'private' and protected prefix for forums
+function remove_private_title($title) {
+	return '%s';
+}
+
+function remove_protected_title($title) {
+	return '%s';
+}
+
+add_filter('protected_title_format', 'remove_protected_title');
+add_filter('private_title_format', 'remove_private_title');
+
+// Adds the Forum after the group name as the title of the forum index page
+function bfc_add_forum_to_title ($title){
+	$forum_id = bbp_get_forum_id( $forum_id = 0 );
+	$title = get_the_title( $forum_id );
+	$title .= " Forum";
+	return $title;
+}
+
+add_filter('bbp_get_forum_title', bfc_add_forum_to_title, 10, 2);
