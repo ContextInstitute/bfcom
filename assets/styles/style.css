@@ -738,7 +738,7 @@ body {
 	font-size: 16px;
 }
 
-#bbpress-forums>h3 {
+#bbpress-forums > h3 {
 	font-size: 40px;
 	margin: 0;
 }
@@ -896,7 +896,7 @@ body {
 		font-size: calc(15px + 2*((100vw - 320px)/320));
 	}
 
-	#bbpress-forums>h3 {
+	#bbpress-forums > h3 {
 		font-size: calc(32px + 8*((100vw - 320px)/320));
 	}
 
@@ -911,7 +911,7 @@ body {
 		font-size: 17px;
 	}
 
-	#bbpress-forums>h3 {
+	#bbpress-forums > h3 {
 		font-size: 40px;
 	}
 
@@ -926,7 +926,7 @@ body {
 		font-size: 15px;
 	}
 
-	#bbpress-forums>h3 {
+	#bbpress-forums > h3 {
 		font-size: 32px;
 	}
 
