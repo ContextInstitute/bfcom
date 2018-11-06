@@ -738,7 +738,7 @@ body {
 	font-size: 16px;
 }
 
-#bbpress-forums h3 {
+#bbpress-forums>h3 {
 	font-size: 40px;
 	margin: 0;
 }
@@ -768,7 +768,7 @@ body {
 }
 
 .bp_group #item-body {
-	margin-top: 8px;
+	margin-top: 3px;
 }
 
 .bbp-body {
@@ -795,7 +795,7 @@ body {
 /* This is taken from /wp-content/plugins/bbpress/templates/default/css/bbpress.css starting at line 1140 */
 /* Changed the break-point from 420 to 640. 420 was too narrow. 640 is the max-width for the reply text and this covers larger phones. */
 /* Other changes noted below. This may need further review and tweaking for the forum index page */
-@media only screen and (max-width: 640px) {
+@media (max-width: 640px) {
 	#bbpress-forums div.bbp-topic-tags {
 		clear: left;
 		float: left;
@@ -891,12 +891,12 @@ body {
 }
 
 /* Fluid type between 320 and 640. May need to be expanded to handle other heading sizes */
-@media only screen and (min-width: 320px) {
+@media (min-width: 320px) {
 	.bbp-reply-content {
 		font-size: calc(15px + 2*((100vw - 320px)/320));
 	}
 
-	#bbpress-forums h3 {
+	#bbpress-forums>h3 {
 		font-size: calc(32px + 8*((100vw - 320px)/320));
 	}
 
@@ -906,12 +906,12 @@ body {
 	}
 }
 
-@media only screen and (min-width: 640px) {
+@media (min-width: 640px) {
 	.bbp-reply-content {
 		font-size: 17px;
 	}
 
-	#bbpress-forums h3 {
+	#bbpress-forums>h3 {
 		font-size: 40px;
 	}
 
@@ -921,12 +921,12 @@ body {
 	}
 }
 
-@media only screen and (max-width: 319px) {
+@media (max-width: 319px) {
 	.bbp-reply-content {
 		font-size: 15px;
 	}
 
-	#bbpress-forums h3 {
+	#bbpress-forums>h3 {
 		font-size: 32px;
 	}
 
@@ -934,4 +934,66 @@ body {
 	.forum.single-item .page-title {
 		font-size: 14px;
 	}
+}
+
+.bfc-topic-author-avatar {
+	float: left;
+	padding-right: 8px;
+}
+
+.bbp-topic-permalink {
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 12px;
+}
+
+.bbp-body .bbp-topic-reply-count {
+	font-size: 13px;
+	font-weight: 500;
+	line-height: 19px;
+}
+
+.bbp-topic-freshness >a {
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 16px;
+}
+
+#bbpress-forums .bbp-header .bbp-topic-title {
+	margin-left: 48px;
+}
+
+#bbpress-forums p.bbp-topic-meta {
+	font-size: 12px;
+	margin-top: 0px;
+	line-height: 18px;
+}
+
+.bbp-topic-title .bbp-topic-pagination {
+	margin-bottom: 0px;
+}
+
+#bbpress-forums .bbp-pagination {
+	float: right;
+	width: auto;
+	margin-bottom: 7px;
+	color: rgba(39, 39, 39, 0.65);
+	margin-top: 3px;
+}
+
+#bbpress-forums .button {
+	float: left;
+	margin-bottom: 11px;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.page-title {
+	margin-bottom: 0;
+	margin-left: 3px;
+	color: rgba(39, 39, 39, 0.75);
+}
+
+.bbp-topic-form {
+	clear: right;
 }
