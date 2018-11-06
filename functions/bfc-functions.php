@@ -186,11 +186,11 @@ add_filter( 'bbp_get_reply_admin_links', 'bfc_filter_bbp_reply_admin_links', 10,
 //removes 'private' and protected prefix for forums
 function remove_private_title($title) {
 	return '%s';
-	}
+}
 
 function remove_protected_title($title) {
 	return '%s';
-	}
+}
 
 add_filter('protected_title_format', 'remove_protected_title');
 add_filter('private_title_format', 'remove_private_title');
