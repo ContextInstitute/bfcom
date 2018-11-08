@@ -743,8 +743,16 @@ body {
 	margin: 0;
 }
 
+div.header-user img.avatar {
+  border-radius: 10px;
+}
+
 #bbpress-forums img.avatar {
-	border-radius: 10px;
+	border-radius: 12px;
+}
+
+#item-header-avatar img.avatar {
+  border-radius: 16px;
 }
 
 #bbpress-forums .bbp-reply-post-date {
