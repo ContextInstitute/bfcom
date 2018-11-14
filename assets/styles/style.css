@@ -489,61 +489,9 @@ body {
 	max-width: 840px;
 }
 
-/* MENU */
-.menu-item-home.active > a,
-.dropdown .menu-item-home > a {
-	background-image: url(/wp-content/themes/bfcom/assets/images/home.svg);
-	background-repeat: no-repeat;
-	padding-left: 30px;
-	background-position: 3px 4px;
-}
-
-.menu-item.members.active > a,
-.dropdown .menu-item.members > a {
-	background-image: url(/wp-content/themes/bfcom/assets/images/members.svg);
-	background-repeat: no-repeat;
-	padding-left: 30px;
-	background-position: 3px 4px;
-}
-
-.menu-item.groups.active > a,
-.dropdown .menu-item.groups > a {
-	background-image: url(/wp-content/themes/bfcom/assets/images/groups.svg);
-	background-repeat: no-repeat;
-	padding-left: 30px;
-	background-position: 3px 4px;
-}
-
-.menu-item-167.active > a,
-.dropdown .menu-item-167 > a {
-	background-image: url(/wp-content/themes/bfcom/assets/images/resources.svg);
-	background-repeat: no-repeat;
-	padding-left: 30px;
-	background-position: 3px 4px;
-}
-
-.menu-item.blogs.active > a,
-.dropdown .menu-item.blogs > a {
-	background-image: url(/wp-content/themes/bfcom/assets/images/blog.svg);
-	background-repeat: no-repeat;
-	padding-left: 30px;
-	background-position: 3px 4px;
-}
-
-.menu-item-615.active > a,
-.dropdown .menu-item-615 > a {
-	background-image: url(/wp-content/themes/bfcom/assets/images/search.svg);
-	background-repeat: no-repeat;
-	padding-left: 30px;
-	background-position: 3px 4px;
-}
-
 @media (max-width:767px) {
 	.header-topmenu .menu-item {
-		width: 30px;
-		margin: 0 5px;
-		overflow: hidden;
-		color: transparent;
+  		font-size: 0;
 	}
 }
 

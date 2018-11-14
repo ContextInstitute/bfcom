@@ -124,6 +124,123 @@ function bfc_nouveau_has_nav( $args = array() ) {
 	return true;
 }
 
+/* Main Nav Menu */
+function bfc_top_nav_menu_builder() {
+$menuitemarray = array (
+  array (
+    'menu-item-163', // menu item id (and selector name)
+    'menu-item-home menu-item-type-custom menu-item-object-custom current-menu-item current_page_item', // any unique selectors for menu item
+    'home', // parent top nav to highlight
+    '/', // page, use relative urls
+    '/wp-content/themes/bfcom/assets/images/home.svg', // icon          // menu item icon
+    'Home' // menu item text
+  ),
+  array (
+    'menu-item-164',
+    'members menu-item-type-post_type menu-item-object-page',
+    'members',
+    '/members/',
+    '/wp-content/themes/bfcom/assets/images/members.svg',
+    'People'
+  ),
+  array (
+    'menu-item-165',
+    'groups menu-item-type-post_type menu-item-object-page',
+    'groups',
+    '/groups/',
+    '/wp-content/themes/bfcom/assets/images/groups.svg',
+    'Groups'
+  ),
+  array (
+    'menu-item-167',
+    'resources menu-item-type-post_type menu-item-object-page',
+    'resources',
+    '/wiki/',
+    '/wp-content/themes/bfcom/assets/images/resources.svg',
+    'Resources'
+  ),
+  array (
+    'menu-item-166',
+    'blogs menu-item-type-post_type menu-item-object-page',
+    'blogs',
+    '/sites/',
+    '/wp-content/themes/bfcom/assets/images/blog.svg',
+    'Blogs'
+  ),
+  array (
+    'menu-item-615',
+    'search menu-item-type-post_type menu-item-object-page',
+    'search',
+    '/activity/',
+    '/wp-content/themes/bfcom/assets/images/search.svg',
+    'Search'
+  )
+);
+return $menuitemarray;
+}
+
+function bfc_top_nav() {
+  // Build collection for this template method
+  $menuitemarray = bfc_top_nav_menu_builder();
+
+  // set $topnav to its initial value
+    $topnav = '<ul id="bfc-topmenu" class="medium-horizontal menu">'; //start with the opening ul and its selectors
+
+  // loop through each menu item in the collection to build topnav html
+  foreach ($menuitemarray as $menuitem) {
+    $thismenuitem =  '<li '; // start the li
+    $thismenuitem .= 'id="';
+    $thismenuitem .= $menuitem[0]; // add id this menu item
+    $thismenuitem .= '" class="menu-item '; // common selectors for menu item
+    $thismenuitem .= $menuitem[1]; // add any specific selectors for this menu item
+    $thismenuitem .= ' ';
+    $thismenuitem .= $menuitem[0]; // also add the id as a selector
+
+    if (bfc_top_nav_is_active($menuitem[2])) {
+          $thismenuitem .= ' active'; // highlight the active parent
+    }
+    $thismenuitem .= '" role="menuitem"><a href="';
+      $thismenuitem .= $menuitem[3]; // add link
+    $thismenuitem .= '">';
+    $thismenuitem .= '<img src="';
+    $thismenuitem .= $menuitem[4]; // add icon
+    $thismenuitem .= '">';
+    $thismenuitem .= $menuitem[5]; // menu item text 
+    $thismenuitem .= '</a></li>'; // close off the menu item
+
+    $topnav .= $thismenuitem; // add menu item to nav
+  }
+    $topnav .= '</ul>'; //close ul
+
+    echo $topnav;
+}
+
+// determine of the top menu item should be highlighted
+function bfc_top_nav_is_active($topmenuparent) {
+
+ if ($topmenuparent == 'home' && is_front_page()) {
+        return true;
+    }
+  else if ($topmenuparent == 'members' && (is_page('members') || bp_is_user())) {
+        return true;
+    }
+  else if ($topmenuparent == 'groups' && (is_page('groups') || bp_is_group())) {
+    return true;
+    }
+  else if ($topmenuparent == 'resources' && bp_docs_is_bp_docs_page()) {
+    return true;
+    }
+  else if ($topmenuparent == 'blogs' && is_page('sites')) {
+    return true;
+    }
+  else if ($topmenuparent == 'search' && is_page('activity')) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
 /* Update post actions menu by removing Spam item */
 function bfc_change_topic_admin_links ($r) {
 	$r['links'] = apply_filters( 'bfc_topic_admin_links', array(
