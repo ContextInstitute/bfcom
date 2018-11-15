@@ -4,7 +4,7 @@
 		<a href="<?php echo home_url(); ?>"><img src="/wp-content/themes/bfcom/assets/images/logo9b.svg" alt="Logo"/></a>
 	</div>
 	<div class="header-topmenu">
-		<?php joints_top_nav(); ?>
+    <?php bfc_top_nav(); ?> <!-- this replaces the call to joints_top_nav(); -->
 	</div>
 	<?php if(! is_user_logged_in() ) : ?>
 		<a href="/wp-login.php?action=login">Log in</a>

@@ -124,6 +124,114 @@ function bfc_nouveau_has_nav( $args = array() ) {
 	return true;
 }
 
+/* Main Nav Menu */
+function bfc_top_nav_menu_builder() {
+	$menuitemarray = array (
+		array (
+			'id' => 'bfc-topnav-home', // menu item id
+			'classes' => 'menu-item-home menu-item-type-custom menu-item-object-custom current-menu-item current_page_item', // any unique classes for menu item
+			'parent_nav' => 'home', // parent top nav to highlight
+			'link_url' => '/', // page, use relative urls
+			'icon_url' => '/wp-content/themes/bfcom/assets/images/home.svg', // menu item icon
+			'text' => 'Home' // menu item text
+		),
+		array (
+			'id' => 'bfc-topnav-members',
+			'classes' => 'members menu-item-type-post_type menu-item-object-page',
+			'parent_nav' => 'members',
+			'link_url' => '/members/',
+			'icon_url' => '/wp-content/themes/bfcom/assets/images/members.svg',
+			'text' => 'People'
+		),
+		array (
+			'id' => 'bfc-topnav-groups',
+			'classes' => 'groups menu-item-type-post_type menu-item-object-page',
+			'parent_nav' => 'groups',
+			'link_url' => '/groups/',
+			'icon_url' => '/wp-content/themes/bfcom/assets/images/groups.svg',
+			'text' => 'Groups'
+		),
+		array (
+			'id' => 'bfc-topnav-resources',
+			'classes' => 'resources menu-item-type-post_type menu-item-object-page',
+			'parent_nav' => 'resources',
+			'link_url' => '/wiki/',
+			'icon_url' => '/wp-content/themes/bfcom/assets/images/resources.svg',
+			'text' => 'Resources'
+		),
+		array (
+			'id' => 'bfc-topnav-blogs',
+			'classes' => 'blogs menu-item-type-post_type menu-item-object-page',
+			'parent_nav' => 'blogs',
+			'link_url' => '/sites/',
+			'icon_url' => '/wp-content/themes/bfcom/assets/images/blog.svg',
+			'text' => 'Blogs'
+		),
+		array (
+			'id' => 'bfc-topnav-search',
+			'classes' => 'search menu-item-type-post_type menu-item-object-page',
+			'parent_nav' => 'search',
+			'link_url' => '/activity/',
+			'icon_url' => '/wp-content/themes/bfcom/assets/images/search.svg',
+			'text' => 'Search'
+		)
+	);
+	return $menuitemarray;
+}
+
+function bfc_top_nav() {
+	// Build collection for this template method
+	$menuitemarray = bfc_top_nav_menu_builder();
+
+	// set $topnav to its initial value
+	$topnav = '<ul id="bfc-topmenu" class="medium-horizontal menu">'; //start with the opening ul and its selectors
+
+	// loop through each menu item in the collection to build topnav html
+	foreach ($menuitemarray as $menuitem) {
+		$thismenuitem =  '<li ';
+		$thismenuitem .= 'id="';
+		$thismenuitem .= $menuitem['id'];
+		$thismenuitem .= '" class="menu-item ';
+		$thismenuitem .= $menuitem['classes'];
+
+		if (bfc_top_nav_is_active($menuitem['parent_nav'])) {
+			$thismenuitem .= ' active';
+		}
+		$thismenuitem .= '" role="menuitem"><a href="';
+		$thismenuitem .= $menuitem['link_url'];
+		$thismenuitem .= '">';
+		$thismenuitem .= '<img src="';
+		$thismenuitem .= $menuitem['icon_url'];
+		$thismenuitem .= '">';
+		$thismenuitem .= $menuitem['text'];
+		$thismenuitem .= '</a></li>';
+
+		$topnav .= $thismenuitem;
+	}
+	$topnav .= '</ul>';
+
+	echo $topnav;
+}
+
+// determine of the top menu item should be highlighted
+function bfc_top_nav_is_active($topmenuparent) {
+	if ($topmenuparent == 'home' && is_front_page()) {
+		return true;
+	} elseif ($topmenuparent == 'members' && (is_page('members') || bp_is_user())) {
+		return true;
+    } elseif ($topmenuparent == 'groups' && (is_page('groups') || bp_is_group())) {
+		return true;
+	} elseif ($topmenuparent == 'resources' && bp_docs_is_bp_docs_page()) {
+		return true;
+	} elseif ($topmenuparent == 'blogs' && is_page('sites')) {
+		return true;
+	} elseif ($topmenuparent == 'search' && is_page('activity')) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
 /* Update post actions menu by removing Spam item */
 function bfc_change_topic_admin_links ($r) {
 	$r['links'] = apply_filters( 'bfc_topic_admin_links', array(
