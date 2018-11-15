@@ -128,52 +128,52 @@ function bfc_nouveau_has_nav( $args = array() ) {
 function bfc_top_nav_menu_builder() {
 	$menuitemarray = array (
 		array (
-			'bfc-topnav-home', // menu item id
-			'menu-item-home menu-item-type-custom menu-item-object-custom current-menu-item current_page_item', // any unique classes for menu item
-			'home', // parent top nav to highlight
-			'/', // page, use relative urls
-			'/wp-content/themes/bfcom/assets/images/home.svg', // menu item icon
-			'Home' // menu item text
+			'id' => 'bfc-topnav-home', // menu item id
+			'classes' => 'menu-item-home menu-item-type-custom menu-item-object-custom current-menu-item current_page_item', // any unique classes for menu item
+			'parent_nav' => 'home', // parent top nav to highlight
+			'link_url' => '/', // page, use relative urls
+			'icon_url' => '/wp-content/themes/bfcom/assets/images/home.svg', // menu item icon
+			'text' => 'Home' // menu item text
 		),
 		array (
-			'bfc-topnav-members',
-			'members menu-item-type-post_type menu-item-object-page',
-			'members',
-			'/members/',
-			'/wp-content/themes/bfcom/assets/images/members.svg',
-			'People'
+			'id' => 'bfc-topnav-members',
+			'classes' => 'members menu-item-type-post_type menu-item-object-page',
+			'parent_nav' => 'members',
+			'link_url' => '/members/',
+			'icon_url' => '/wp-content/themes/bfcom/assets/images/members.svg',
+			'text' => 'People'
 		),
 		array (
-			'bfc-topnav-groups',
-			'groups menu-item-type-post_type menu-item-object-page',
-			'groups',
-			'/groups/',
-			'/wp-content/themes/bfcom/assets/images/groups.svg',
-			'Groups'
+			'id' => 'bfc-topnav-groups',
+			'classes' => 'groups menu-item-type-post_type menu-item-object-page',
+			'parent_nav' => 'groups',
+			'link_url' => '/groups/',
+			'icon_url' => '/wp-content/themes/bfcom/assets/images/groups.svg',
+			'text' => 'Groups'
 		),
 		array (
-			'bfc-topnav-resources',
-			'resources menu-item-type-post_type menu-item-object-page',
-			'resources',
-			'/wiki/',
-			'/wp-content/themes/bfcom/assets/images/resources.svg',
-			'Resources'
+			'id' => 'bfc-topnav-resources',
+			'classes' => 'resources menu-item-type-post_type menu-item-object-page',
+			'parent_nav' => 'resources',
+			'link_url' => '/wiki/',
+			'icon_url' => '/wp-content/themes/bfcom/assets/images/resources.svg',
+			'text' => 'Resources'
 		),
 		array (
-			'bfc-topnav-blogs',
-			'blogs menu-item-type-post_type menu-item-object-page',
-			'blogs',
-			'/sites/',
-			'/wp-content/themes/bfcom/assets/images/blog.svg',
-			'Blogs'
+			'id' => 'bfc-topnav-blogs',
+			'classes' => 'blogs menu-item-type-post_type menu-item-object-page',
+			'parent_nav' => 'blogs',
+			'link_url' => '/sites/',
+			'icon_url' => '/wp-content/themes/bfcom/assets/images/blog.svg',
+			'text' => 'Blogs'
 		),
 		array (
-			'bfc-topnav-search',
-			'search menu-item-type-post_type menu-item-object-page',
-			'search',
-			'/activity/',
-			'/wp-content/themes/bfcom/assets/images/search.svg',
-			'Search'
+			'id' => 'bfc-topnav-search',
+			'classes' => 'search menu-item-type-post_type menu-item-object-page',
+			'parent_nav' => 'search',
+			'link_url' => '/activity/',
+			'icon_url' => '/wp-content/themes/bfcom/assets/images/search.svg',
+			'text' => 'Search'
 		)
 	);
 	return $menuitemarray;
@@ -188,27 +188,27 @@ function bfc_top_nav() {
 
 	// loop through each menu item in the collection to build topnav html
 	foreach ($menuitemarray as $menuitem) {
-		$thismenuitem =  '<li '; // start the li
+		$thismenuitem =  '<li ';
 		$thismenuitem .= 'id="';
-		$thismenuitem .= $menuitem[0]; // add id this menu item
-		$thismenuitem .= '" class="menu-item '; // common selectors for menu item
-		$thismenuitem .= $menuitem[1]; // add any specific selectors for this menu item
+		$thismenuitem .= $menuitem['id'];
+		$thismenuitem .= '" class="menu-item ';
+		$thismenuitem .= $menuitem['classes'];
 
-		if (bfc_top_nav_is_active($menuitem[2])) {
-			$thismenuitem .= ' active'; // highlight the active parent
+		if (bfc_top_nav_is_active($menuitem['parent_nav'])) {
+			$thismenuitem .= ' active';
 		}
 		$thismenuitem .= '" role="menuitem"><a href="';
-		$thismenuitem .= $menuitem[3]; // add link
+		$thismenuitem .= $menuitem['link_url'];
 		$thismenuitem .= '">';
 		$thismenuitem .= '<img src="';
-		$thismenuitem .= $menuitem[4]; // add icon
+		$thismenuitem .= $menuitem['icon_url'];
 		$thismenuitem .= '">';
-		$thismenuitem .= $menuitem[5]; // menu item text
-		$thismenuitem .= '</a></li>'; // close off the menu item
+		$thismenuitem .= $menuitem['text'];
+		$thismenuitem .= '</a></li>';
 
-		$topnav .= $thismenuitem; // add menu item to nav
+		$topnav .= $thismenuitem;
 	}
-	$topnav .= '</ul>'; //close ul
+	$topnav .= '</ul>';
 
 	echo $topnav;
 }
