@@ -128,7 +128,7 @@ function bfc_nouveau_has_nav( $args = array() ) {
 function bfc_top_nav_menu_builder() {
 $menuitemarray = array (
   array (
-    'menu-item-163', // menu item id (and selector name)
+    'bfc-topnav-home', // menu item id (and selector name)
     'menu-item-home menu-item-type-custom menu-item-object-custom current-menu-item current_page_item', // any unique selectors for menu item
     'home', // parent top nav to highlight
     '/', // page, use relative urls
@@ -136,7 +136,7 @@ $menuitemarray = array (
     'Home' // menu item text
   ),
   array (
-    'menu-item-164',
+    'bfc-topnav-members',
     'members menu-item-type-post_type menu-item-object-page',
     'members',
     '/members/',
@@ -144,7 +144,7 @@ $menuitemarray = array (
     'People'
   ),
   array (
-    'menu-item-165',
+    'bfc-topnav-groups',
     'groups menu-item-type-post_type menu-item-object-page',
     'groups',
     '/groups/',
@@ -152,7 +152,7 @@ $menuitemarray = array (
     'Groups'
   ),
   array (
-    'menu-item-167',
+    'bfc-topnav-resources',
     'resources menu-item-type-post_type menu-item-object-page',
     'resources',
     '/wiki/',
@@ -160,7 +160,7 @@ $menuitemarray = array (
     'Resources'
   ),
   array (
-    'menu-item-166',
+    'bfc-topnav-blogs',
     'blogs menu-item-type-post_type menu-item-object-page',
     'blogs',
     '/sites/',
@@ -168,7 +168,7 @@ $menuitemarray = array (
     'Blogs'
   ),
   array (
-    'menu-item-615',
+    'bfc-topnav-search',
     'search menu-item-type-post_type menu-item-object-page',
     'search',
     '/activity/',
@@ -193,8 +193,6 @@ function bfc_top_nav() {
     $thismenuitem .= $menuitem[0]; // add id this menu item
     $thismenuitem .= '" class="menu-item '; // common selectors for menu item
     $thismenuitem .= $menuitem[1]; // add any specific selectors for this menu item
-    $thismenuitem .= ' ';
-    $thismenuitem .= $menuitem[0]; // also add the id as a selector
 
     if (bfc_top_nav_is_active($menuitem[2])) {
           $thismenuitem .= ' active'; // highlight the active parent
@@ -205,7 +203,7 @@ function bfc_top_nav() {
     $thismenuitem .= '<img src="';
     $thismenuitem .= $menuitem[4]; // add icon
     $thismenuitem .= '">';
-    $thismenuitem .= $menuitem[5]; // menu item text 
+    $thismenuitem .= $menuitem[5]; // menu item text
     $thismenuitem .= '</a></li>'; // close off the menu item
 
     $topnav .= $thismenuitem; // add menu item to nav
