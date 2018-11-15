@@ -489,12 +489,6 @@ body {
 	max-width: 840px;
 }
 
-@media (max-width:767px) {
-	.header-topmenu .menu-item {
-  		font-size: 0;
-	}
-}
-
 /* HEADER */
 .header-grid {
 	display: grid;
@@ -952,4 +946,46 @@ div.header-user img.avatar {
 
 .bbp-topic-form {
 	clear: right;
+}
+
+.menu .active > a,
+.bp-navs .selected a {
+	background: none;
+	color: #1e1e1e;
+	font-weight: 600;
+	opacity: 1;
+}
+
+.menu .active > a img {
+	opacity: 1;
+}
+
+#more .menu-more {
+	padding: .7rem 1rem;
+	line-height: 1;
+}
+.menu-more,
+.menu a,
+.menu a img {
+	opacity: 0.6;
+	color: #1e1e1e;
+}
+
+@media (max-width:767px) {
+	.header-topmenu .menu a,
+	.menu .active > a{
+		font-size: 0;
+		padding: .1rem .5rem;
+	}
+	
+	.bp-navs .selected a {
+		font-size: inherit;
+	}
+}
+
+@media (max-width:359px) {
+	.header-topmenu .menu a,
+	.menu .active > a{
+		padding: .1rem .2rem;
+	}
 }
