@@ -72,31 +72,21 @@ class bsp_Activity_Widget extends WP_Widget {
 		//set default for exclude
 		
 		//see if we have multiple forums
-				//check if it's any and if so set post_parent__in
-				if ($settings['parent_forum'] == 'any' ) $settings['post_parent__in'] =''; //to set up a null post parent in 
-				//then test if it's not number (either single forum or 0 for root) - if it is, then that's also ok, so don't do further tests
-				elseif ( !is_numeric( $settings['parent_forum'] ) ) {
-						//otherwise it is a list of forums (or rubbish!) so we need to create a post_parent_in array
-						$settings['post_parent__in'] = explode(",",$settings['parent_forum']);
-						$settings['parent_forum'] = '' ; // to nullify it
-					}
-				//it's a single forum so 
-				else $settings['post_parent__in'] =''; //to set up a null post parent in
+			if (bp_is_group()) {
+				$settings['post_parent__in'] = groups_get_groupmeta( bp_get_current_group_id(), $meta_key = 'forum_id', $single = true);
 				
-				//now check if we should actually be excluding instead of including - done this way as $settings['exclude_forum'] may be blank, which means we need to do the above to ensure it catches include forums if it is.
-				if (!empty ($settings['exclude_forum'])) {
-					$settings['post_parent__in'] = '' ; // to get rid of it
-					$settings['parent_forum'] = '' ; // to nullify it
-					//we should be excluding, so ...
-					//check if it makes sense !
-						if (is_numeric( $settings['excluded_forum'] ) ) $settings['post_parent__not_in'] =  array ($settings['excluded_forum']) ;
-						if ( !is_numeric( $settings['excluded_forum'] ) ) {
-								//otherwise it is a list of forums (or rubbish!) so we need to create a post_parent__not_in  array
-								$settings['post_parent__not_in'] = explode(",",$settings['excluded_forum']);
-						}
-						
+			} else {
+				$bfc_user_groups = groups_get_user_groups( bp_loggedin_user_id() );
+				$uforum = array() ;
+				foreach ($bfc_user_groups['groups'] as $ugroup) {
+					$uforum_id = groups_get_groupmeta( $ugroup, $meta_key = 'forum_id', $single = true);
+
+					$uforum[] .= $uforum_id[0];
 				}
-		
+				$settings['post_parent__in'] = $uforum;
+				
+			}
+				
 		// How do we want to order our results?
 		switch ( $settings['order_by'] ) {
 
@@ -146,7 +136,7 @@ class bsp_Activity_Widget extends WP_Widget {
 		}
 		//set size for avatar
 		global $bsp_style_settings_la ;
-		$avatar_size = (!empty($bsp_style_settings_la['AvatarSize']) ? $bsp_style_settings_la['AvatarSize']  : '14') ;
+		$avatar_size = (!empty($bsp_style_settings_la['AvatarSize']) ? $bsp_style_settings_la['AvatarSize']  : '40') ;
 		
 		
 		//allow other plugin (eg private groups) to filter this query
@@ -168,15 +158,12 @@ class bsp_Activity_Widget extends WP_Widget {
 			return;
 		}
 		
-		
-
 		echo $args['before_widget'];
-
-		if ( !empty( $settings['title'] ) ) {
-			echo '<span class="bsp-la-title">' . $args['before_title'] .  $settings['title'] . $args['after_title'] . '</span>' ;
-		} ?>
 		
-		<ul>
+		echo '<span class="bsp-la-title">' . $args['before_title'] . $settings['title'] . $args['after_title'] . '</span>' ;
+		?>
+		
+		<ul class="bfc-la-ul">
 
 			<?php while ( $widget_query->have_posts() ) :
 				
@@ -188,83 +175,61 @@ class bsp_Activity_Widget extends WP_Widget {
 				//check if this topic has a reply
 				$reply = get_post_meta( $topic_id, '_bbp_last_reply_id',true);
 				
-				// Maybe get the topic author
-				if ( ! empty( $settings['show_user'] ) ) {
-				//do we display avatar?
-					if (!empty ($settings['hide_avatar'])) $type='name' ;
-					else $type='both' ;
 				//if no reply the author
-				if (empty ($reply)) $author_link = bbp_get_topic_author_link( array( 'post_id' => $topic_id, 'type' => $type, 'size' => $avatar_size ) );
+				if (empty ($reply)) {
+					$author_avatar = bbp_get_topic_author_link( array( 'post_id' => $topic_id, 'type' => 'avatar', 'size' => $avatar_size ) );
+					$author_name = bbp_get_topic_author_link( array( 'post_id' => $topic_id, 'type' => 'name' ) );
 				//if has a reply then get the author of the reply
-				else $author_link = bbp_get_reply_author_link( array( 'post_id' => $reply, 'type' => $type, 'size' => $avatar_size) );
-				} ?>
+				} else { 
+					$author_avatar = bbp_get_reply_author_link( array( 'post_id' => $reply, 'type' => 'avatar', 'size' => $avatar_size) );
+					$author_name = bbp_get_reply_author_link( array( 'post_id' => $reply, 'type' => 'name') );
+				} 
+				
+				// Create excerpt
+				$post_id = empty ($reply)? $topic_id : $reply;
+				$bfc_excerpt = wp_trim_words(bbp_get_reply_content($post_id), 15);
+				?>
 
-				<li>
-				<?php 
+				<li class="bfc-la-li">
+				<?php echo '<div class="bfc-la-topic-author-avatar topic-author">' . $author_avatar . '</div><div class="bfc-la-topic-text">';
 				//if no replies set the link to the topic
 				if (empty ($reply)) {?>
 					<a class="bsp-la-reply-topic-title" href="<?php bbp_topic_permalink( $topic_id ); ?>"><?php bbp_topic_title( $topic_id ); ?></a>
 				<?php } 
 				//if replies then set link to the latest reply
 				else { 
-					echo '<a class="bsp-la-reply-topic-title " href="' . esc_url( bbp_get_reply_url( $reply ) ) . '" title="' . esc_attr( bbp_get_reply_excerpt( $reply, 50 ) ) . '">' . bbp_get_reply_topic_title( $reply ) . '</a>';
+					echo '<a class="bsp-la-reply-topic-title" href="' . esc_url( bbp_get_reply_url( $reply ) ) . '" >' . bbp_get_reply_topic_title( $reply ) . '</a>';
 				} ?>
 				
-					<?php if ( ! empty( $author_link ) ) : ?>
-						<div class = "bsp-activity-author">
-						<?php 
-						
-							if (empty($reply)) {
-							echo '<span class="bsp-la-text">' ;
-							printf( _x( 'topic by %1$s', 'widgets', 'bbp-style-pack' ), '</span> <span class="bsp-la-topic-author topic-author">' . $author_link . '</span>' ); 
-							}
-							else {
-							echo '<span class="bsp-la-text">' ;
-							printf( _x( 'reply by %1$s', 'widgets', 'bbp-style-pack' ), '</span> <span class=" bsp-la-topic-author topic-author">' . $author_link . '</span>' ); 
-							} ?>
-							
-						</div>
-						<?php endif; ?>
-										
-					
 					<?php if ( ! empty( $settings['show_count'] ) && bbp_get_topic_post_type() == get_post_type()) {
 									$topic = get_the_ID(); ?>
 										<span class="bsp-topic-posts">
 											<?php if ( ! empty( $settings['reply_count_label'] )) echo $settings['reply_count_label'] ; ?>
 											<?php bbp_topic_reply_count($topic); ?>
 										</span>
-					<?php } ?>
+					<?php } 
 					
+					echo '<div class="bfc-la-topic-excerpt">' . $bfc_excerpt . '</div>';
+					echo '<span class="bfc-la-topic-author-name topic-author">' . $author_name . '</span>';
 					
-					
-
-					<?php if ( ! empty( $settings['show_freshness'] ) ) : ?>
+					if ( ! empty( $settings['show_freshness'] ) ) : ?>
 					<?php $output = bbp_get_topic_last_active_time( $topic_id ) ; 
 						//shorten freshness?
-						if ( ! empty( $settings['shorten_freshness'] ) ) $output = preg_replace( '/, .*[^ago]/', ' ', $output ); ?>
-						<div class = "bsp-activity-freshness"><?php 
-						echo '<span class="bsp-la-freshness">'.$output. '</span>'  ;
-						//bbp_topic_last_active_time( $topic_id ); ?></div>
+						if ( ! empty( $settings['shorten_freshness'] ) ) $output = preg_replace( '/, .*[^ago]/', ' ', $output );
+							echo '<span class="bsp-activity-freshness bsp-la-freshness">'.$output. '</span>'; 
+					endif; ?>
 					
-					<?php endif; ?>
-					
-					<?php if ( ! empty( $settings['show_forum'] ) ) : ?>
+					<?php if ( ! bp_is_group()) : ?>
 					<div class = "bsp-activity-forum">
 						<?php
 						$forum = bbp_get_topic_forum_id($topic_id);
-						$forum1 = bbp_get_forum_title($forum) ;
+						$forum1 = get_the_title($forum) ;
 						$forum2 = esc_url( bbp_get_forum_permalink( $forum )) ;
-						echo '<span class="bsp-la-text">' ;
-						_e ( 'in ', 'bbp-style-pack' ) ;
-						echo '</span>' ; ?>
+					?>
 						<a class="bsp-la-forum-title bbp-forum-title" href="<?php echo $forum2; ?>"><?php echo $forum1 ; ?></a>
-					</div>
+					</div></div>
 					<?php endif; ?>
 				
-						
-
-					
-
 				</li>
 
 			<?php endwhile; ?>
