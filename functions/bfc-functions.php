@@ -2,6 +2,8 @@
 
 // All of the bfcom-specific functions
 
+define('BP_DEFAULT_COMPONENT', 'profile' );
+
 // Remove the Toolbar for all users
 add_filter('show_admin_bar','__return_false');
 
@@ -213,7 +215,7 @@ function bfc_top_nav() {
 	echo $topnav;
 }
 
-// determine of the top menu item should be highlighted
+// determine which of the top menu items should be highlighted
 function bfc_top_nav_is_active($topmenuparent) {
 	if ($topmenuparent == 'home' && is_front_page()) {
 		return true;
