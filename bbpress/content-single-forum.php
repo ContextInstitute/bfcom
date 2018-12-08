@@ -31,7 +31,7 @@
 
 		<?php if ( !bbp_is_forum_category() && bbp_has_topics() ) : ?>
 
-			<a href = "#new-post" class = "button">Create New Topic</a>
+			<a href = "#new-post" class = "button">+ New Topic</a>
 
 			<?php bbp_get_template_part( 'pagination', 'topics'    ); ?>
 
