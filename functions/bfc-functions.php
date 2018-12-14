@@ -2,6 +2,14 @@
 
 // All of the bfcom-specific functions
 
+function replace_core_jquery_version() {
+	wp_deregister_script( 'jquery-core' );
+	wp_register_script( 'jquery-core', "https://code.jquery.com/jquery-3.3.1.min.js", array(), '3.3.1' );
+	wp_deregister_script( 'jquery-migrate' );
+	wp_register_script( 'jquery-migrate', "https://code.jquery.com/jquery-migrate-3.0.1.js", array(), '3.0.1' );
+}
+add_action( 'wp_enqueue_scripts', 'replace_core_jquery_version' );
+
 define('BP_DEFAULT_COMPONENT', 'profile' );
 
 // Remove the Toolbar for all users
@@ -221,7 +229,7 @@ function bfc_top_nav_is_active($topmenuparent) {
 		return true;
 	} elseif ($topmenuparent == 'members' && (is_page('members') || bp_is_user())) {
 		return true;
-    } elseif ($topmenuparent == 'groups' && (is_page('groups') || bp_is_group())) {
+	} elseif ($topmenuparent == 'groups' && (is_page('groups') || bp_is_group())) {
 		return true;
 	} elseif ($topmenuparent == 'resources' && bp_docs_is_bp_docs_page()) {
 		return true;
@@ -258,7 +266,7 @@ function bfc_filter_bbp_actions_topic_links( $array, $r_id ) {
 	$array = str_replace('>Trash<', 'title="Trash this item"><img src="/wp-content/themes/bfcom/assets/images/trash.svg"><', $array);
 	$array = str_replace('>Reply<', 'title="Reply to this item"><img src="/wp-content/themes/bfcom/assets/images/reply.svg"><', $array);
 
-    return $array;
+	return $array;
 };
 
 // add the filter
@@ -287,7 +295,7 @@ function bfc_filter_bbp_reply_admin_links( $array, $r_id ) {
 	$array = str_replace('>Trash<', 'title="Trash this item"><img src="/wp-content/themes/bfcom/assets/images/trash.svg"><', $array);
 	$array = str_replace('>Reply<', 'title="Reply to this item"><img src="/wp-content/themes/bfcom/assets/images/reply.svg"><', $array);
 
-    return $array;
+	return $array;
 };
 
 // add the filter
