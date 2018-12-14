@@ -525,11 +525,11 @@ body {
 	display: flex;
 }
 
-#more {
+/* #more {
 	display: none;
-}
+} */
 
-@media (max-width:1200px) {
+/* @media (max-width:1200px) {
 	.bp-personal-nav #more {
 		display: contents;
 	}
@@ -653,7 +653,7 @@ body {
 	.bp-group-nav .more-ul li:nth-child(n+2) {
 		display: contents;
 	}
-}
+} */
 
 @media (min-width:768px) {
 	.header-grid {
@@ -971,7 +971,7 @@ div.header-user img.avatar {
 	color: #1e1e1e;
 }
 
-@media (max-width:767px) {
+@media (max-width:797px) {
 	.header-topmenu .menu a,
 	.menu .active > a{
 		font-size: 0;
