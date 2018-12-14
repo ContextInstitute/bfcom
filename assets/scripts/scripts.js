@@ -10,3 +10,30 @@ jQuery('iframe[src*="youtube.com"], iframe[src*="vimeo.com"]').each(function(){i
 /*
 Insert Custom JS Below
 */
+
+(function($){
+function updateMenu() {
+	var $subnav1 = $('#menu-subnav-1');
+	var $subnav2 = $('#menu-subnav-2');
+	var $more = $subnav2.find('#more');
+	var $items1 = $subnav1.find('li');
+	var $items2 = $subnav2.find('.more-ul li');
+	var targetWidth = window.innerWidth - 200;
+	
+	$more.hide();
+	$items2.hide();
+	
+	var i;
+	for (i = $items1.length - 1; i >= 0; i--) {
+	  if ($subnav1.width() > targetWidth) {
+		$items1.eq(i).hide();
+		$items2.eq(i).show();
+		$more.show();
+	  }
+	}
+  }
+  
+  updateMenu();
+  
+  $(window).on('resize', updateMenu);
+}) (jQuery);
