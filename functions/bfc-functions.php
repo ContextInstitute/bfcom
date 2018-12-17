@@ -196,6 +196,7 @@ function bfc_top_nav() {
 	// set $topnav to its initial value
 	$topnav = '<ul id="bfc-topmenu" class="medium-horizontal menu">'; //start with the opening ul and its selectors
 
+	$active_item_found = false;
 	// loop through each menu item in the collection to build topnav html
 	foreach ($menuitemarray as $menuitem) {
 		$thismenuitem =  '<li ';
@@ -204,8 +205,9 @@ function bfc_top_nav() {
 		$thismenuitem .= '" class="menu-item ';
 		$thismenuitem .= $menuitem['classes'];
 
-		if (bfc_top_nav_is_active($menuitem['parent_nav'])) {
+		if (!$active_item_found && bfc_top_nav_is_active($menuitem['parent_nav'])) {
 			$thismenuitem .= ' active';
+			$active_item_found = true;
 		}
 		$thismenuitem .= '" role="menuitem"><a href="';
 		$thismenuitem .= $menuitem['link_url'];
