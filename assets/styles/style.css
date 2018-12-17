@@ -525,136 +525,6 @@ body {
 	display: flex;
 }
 
-#more {
-	display: none;
-}
-
-@media (max-width:1200px) {
-	.bp-personal-nav #more {
-		display: contents;
-	}
-
-	.bp-personal-nav #menu-subnav-1 li:nth-child(n+10) {
-		display: none;
-	}
-
-	.bp-personal-nav .more-ul li {
-		display: none;
-	}
-
-	.bp-personal-nav .more-ul li:nth-child(n+10) {
-		display: contents;
-	}
-}
-
-@media (max-width:1075px) {
-	.bp-personal-nav #menu-subnav-1 li:nth-child(n+9) {
-		display: none;
-	}
-
-	.bp-personal-nav .more-ul li:nth-child(n+9) {
-		display: contents;
-	}
-
-	.bp-group-nav #more {
-		display: contents;
-	}
-
-	.bp-group-nav #menu-subnav-1 li:nth-child(n+8) {
-		display: none;
-	}
-
-	.bp-group-nav .more-ul li {
-		display: none;
-	}
-
-	.bp-group-nav .more-ul li:nth-child(n+8) {
-		display: contents;
-	}
-}
-
-@media (max-width:980px) {
-	.bp-personal-nav #menu-subnav-1 li:nth-child(n+8) {
-		display: none;
-	}
-
-	.bp-personal-nav .more-ul li:nth-child(n+8) {
-		display: contents;
-	}
-}
-
-@media (max-width:900px) {
-	.bp-personal-nav #menu-subnav-1 li:nth-child(n+7),
-	.bp-group-nav #menu-subnav-1 li:nth-child(n+7) {
-		display: none;
-	}
-
-	.bp-personal-nav .more-ul li:nth-child(n+7),
-	.bp-group-nav .more-ul li:nth-child(n+7) {
-		display: contents;
-	}
-}
-
-@media (max-width:810px) {
-	.bp-personal-nav #menu-subnav-1 li:nth-child(n+6),
-	.bp-group-nav #menu-subnav-1 li:nth-child(n+6) {
-		display: none;
-	}
-
-	.bp-personal-nav .more-ul li:nth-child(n+6),
-	.bp-group-nav .more-ul li:nth-child(n+6) {
-		display: contents;
-	}
-}
-
-@media (max-width:670px) {
-	.bp-personal-nav #menu-subnav-1 li:nth-child(n+5),
-	.bp-group-nav #menu-subnav-1 li:nth-child(n+5) {
-		display: none;
-	}
-
-	.bp-personal-nav .more-ul li:nth-child(n+5),
-	.bp-group-nav .more-ul li:nth-child(n+5) {
-		display: contents;
-	}
-}
-
-@media (max-width:600px) {
-	.bp-personal-nav #menu-subnav-1 li:nth-child(n+4),
-	.bp-group-nav #menu-subnav-1 li:nth-child(n+4) {
-		display: none;
-	}
-
-	.bp-personal-nav .more-ul li:nth-child(n+4),
-	.bp-group-nav .more-ul li:nth-child(n+4) {
-		display: contents;
-	}
-}
-
-@media (max-width:500px) {
-	.bp-personal-nav #menu-subnav-1 li:nth-child(n+3),
-	.bp-group-nav #menu-subnav-1 li:nth-child(n+3) {
-		display: none;
-	}
-
-	.bp-personal-nav .more-ul li:nth-child(n+3),
-	.bp-group-nav .more-ul li:nth-child(n+3) {
-		display: contents;
-	}
-}
-
-@media (max-width:420px) {
-	.bp-personal-nav #menu-subnav-1 li:nth-child(n+2),
-	.bp-group-nav #menu-subnav-1 li:nth-child(n+2) {
-		display: none;
-	}
-
-	.bp-personal-nav .more-ul li:nth-child(n+2),
-	.bp-group-nav .more-ul li:nth-child(n+2) {
-		display: contents;
-	}
-}
-
 @media (min-width:768px) {
 	.header-grid {
 		grid-template-columns: 60px 1fr 60px;
@@ -746,6 +616,7 @@ div.header-user img.avatar {
 /* Changed the break-point from 420 to 640. 420 was too narrow. 640 is the max-width for the reply text and this covers larger phones. */
 /* Other changes noted below. This may need further review and tweaking for the forum index page */
 @media (max-width: 640px) {
+
 	#bbpress-forums div.bbp-topic-tags {
 		clear: left;
 		float: left;
@@ -856,7 +727,7 @@ div.header-user img.avatar {
 	}
 }
 
-@media (min-width: 640px) {
+@media (min-width: 641px) {
 	.bbp-reply-content {
 		font-size: 17px;
 	}
@@ -947,9 +818,10 @@ div.header-user img.avatar {
 .bbp-topic-form {
 	clear: right;
 }
-
+/* Hightlights active/selected menu item.  */
 .menu .active > a,
-.bp-navs .selected a {
+.bp-navs .selected a, 
+.bp-navs span.selected {
 	background: none;
 	color: #1e1e1e;
 	font-weight: 600;
@@ -971,7 +843,7 @@ div.header-user img.avatar {
 	color: #1e1e1e;
 }
 
-@media (max-width:767px) {
+@media (max-width:797px) {
 	.header-topmenu .menu a,
 	.menu .active > a{
 		font-size: 0;
@@ -1067,6 +939,10 @@ div.header-user img.avatar {
 }
 
 @media (max-width:767px) {
+	.header-submenu {
+		padding: 0 36px;
+	}
+
 	.bfc-dash-accordion {
 		display: block;
 	}

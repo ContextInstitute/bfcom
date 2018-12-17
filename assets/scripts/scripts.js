@@ -10,3 +10,37 @@ jQuery('iframe[src*="youtube.com"], iframe[src*="vimeo.com"]').each(function(){i
 /*
 Insert Custom JS Below
 */
+
+(function($){
+
+// Enables the submenu to be responsive by moving menu items into the More ... menu.
+function updateSubMenu() {
+	var $subnav1 = $('#menu-subnav-1');
+	var $subnav2 = $('#menu-subnav-2');
+	var $more = $subnav2.find('#more');
+	var $moreSpan =$more.find('span');
+	var $items1 = $subnav1.find('li');
+	var $items2 = $subnav2.find('.more-ul li');
+	var targetHeight = $items1.eq(0).height()*1.2;
+	
+	$more.hide();
+	$items1.show();
+	$items2.hide();
+	$moreSpan.removeClass('selected');
+	var i;
+	for (i = $items1.length - 1; i >= 0; i--) {
+	  if ($subnav1.height() > targetHeight) {
+		$items1.eq(i).hide();
+		$items2.eq(i).show();
+		$more.show();
+		if($items1.eq(i).hasClass('selected')){
+			$moreSpan.addClass('selected');
+		}
+	  }
+	}
+  }
+  
+  updateSubMenu();
+  
+  $(window).on('resize', updateSubMenu);
+}) (jQuery);
