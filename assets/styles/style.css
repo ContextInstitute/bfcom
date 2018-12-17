@@ -492,9 +492,9 @@ body {
 /* HEADER */
 .header-grid {
 	display: grid;
-	grid-template-columns: 40px 1fr 40px;
+	grid-template-columns: 50px 1fr 50px;
 	grid-template-rows: 20px 20px;
-	grid-template-areas: 'Logo TopMenu User' 'SubMenu SubMenu SubMenu';
+	grid-template-areas: 'Logo TopMenu User' 'Logo SubMenu User';
 	margin: 10px 15px;
 	border-bottom: 1px solid #ccc;
 	padding-bottom: 10px;
@@ -502,6 +502,7 @@ body {
 
 .header-logo {
 	grid-area: Logo;
+	margin-right: 10px;
 }
 
 .header-topmenu {
@@ -512,11 +513,14 @@ body {
 .header-user {
 	grid-area: User;
 	z-index: 100;
+	margin-left: 10px;
 }
 
 .header-submenu {
 	grid-area: SubMenu;
 	margin: 0 auto;
+	border-top: 1px solid #ccc;
+	padding-top: 6px;
 }
 
 .header-submenu .bp-navs {
@@ -527,7 +531,7 @@ body {
 
 @media (min-width:768px) {
 	.header-grid {
-		grid-template-columns: 60px 1fr 60px;
+		grid-template-columns: 70px 1fr 70px;
 		grid-template-rows: 30px 30px;
 		grid-template-areas: 'Logo TopMenu User' 'Logo SubMenu User';
 	}
@@ -828,12 +832,34 @@ div.header-user img.avatar {
 	opacity: 1;
 }
 
+
+.menu .active > a {
+	border-top: 1px solid #cccccc;
+	border-left: 1px solid #cccccc;
+	border-right: 1px solid #cccccc;
+	border-style: solid;
+	border-bottom: 2px solid #ffffff;
+	background-color: #ffffff;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+}
+
+.header-topmenu .menu a {
+	margin-top: -5px;
+	padding: 6px 10px 3px;
+}
+
+.header-submenu .menu a {
+	padding: 4px 16px 4px;
+}
+
+
 .menu .active > a img {
 	opacity: 1;
 }
 
 #more .menu-more {
-	padding: .7rem 1rem;
+	padding: 4px 10px 4px;
 	line-height: 1;
 }
 .menu-more,
@@ -843,22 +869,11 @@ div.header-user img.avatar {
 	color: #1e1e1e;
 }
 
-@media (max-width:797px) {
-	.header-topmenu .menu a,
-	.menu .active > a{
-		font-size: 0;
-		padding: .1rem .5rem;
-	}
-	
-	.bp-navs .selected a {
-		font-size: inherit;
-	}
-}
-
 @media (max-width:359px) {
 	.header-topmenu .menu a,
 	.menu .active > a{
-		padding: .1rem .2rem;
+		padding-left: 3px;
+		padding-right: 3px;
 	}
 }
 
@@ -939,8 +954,24 @@ div.header-user img.avatar {
 }
 
 @media (max-width:767px) {
+	.header-topmenu .menu a,
+	.menu .active > a{
+		font-size: 0;
+		margin-top: -5px;
+		padding: 0px 8px 2px;
+	}
+	
+	.menu a img {
+		padding: 2px 2px 0px;
+		height: 22px;
+	}
+	
+	.bp-navs .selected a {
+		font-size: inherit;
+	}
+	
 	.header-submenu {
-		padding: 0 36px;
+		padding-top: 2px;
 	}
 
 	.bfc-dash-accordion {
@@ -956,5 +987,4 @@ div.header-user img.avatar {
 	.bfc-user-panels {
 		display: none;
 	}
-
 }
