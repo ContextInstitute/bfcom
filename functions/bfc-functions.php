@@ -20,6 +20,8 @@ function bfc_nav_configure() {
 	global $bp;
 	if( bp_is_group() ) {
 		$bp->groups->nav->edit_nav( array( 'name' => __( 'G-Dash', 'buddypress' )), 'home', bp_current_item() );
+	} elseif ( bp_is_user() ) {
+		$bp->members->nav->edit_nav( array( 'name' => __( 'Notices', 'textdomain' ) ), 'notifications' );
 	}
 }
 add_action( 'bp_actions', 'bfc_nav_configure' );
@@ -105,7 +107,7 @@ function bfc_nouveau_has_nav( $args = array() ) {
 				$args = array( 'show_for_displayed_user' => true );
 			}
 			// Reorder the user's primary nav according to the customizer setting.
-			bp_nouveau_set_nav_item_order( $user_nav, array('profile','notifications','messages','groups','docs','activity','settings'));
+			bp_nouveau_set_nav_item_order( $user_nav, array('profile','messages','notifications','groups','docs','activity','settings'));
 			$nav = $user_nav->get_primary( $args );
 		}
 	} elseif ( ! empty( $bp_nouveau->object_nav ) ) {
@@ -196,6 +198,7 @@ function bfc_top_nav() {
 	// set $topnav to its initial value
 	$topnav = '<ul id="bfc-topmenu" class="medium-horizontal menu">'; //start with the opening ul and its selectors
 
+	$active_item_found = false;
 	// loop through each menu item in the collection to build topnav html
 	foreach ($menuitemarray as $menuitem) {
 		$thismenuitem =  '<li ';
@@ -204,8 +207,9 @@ function bfc_top_nav() {
 		$thismenuitem .= '" class="menu-item ';
 		$thismenuitem .= $menuitem['classes'];
 
-		if (bfc_top_nav_is_active($menuitem['parent_nav'])) {
+		if (!$active_item_found && bfc_top_nav_is_active($menuitem['parent_nav'])) {
 			$thismenuitem .= ' active';
+			$active_item_found = true;
 		}
 		$thismenuitem .= '" role="menuitem"><a href="';
 		$thismenuitem .= $menuitem['link_url'];
