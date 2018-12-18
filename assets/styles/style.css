@@ -950,7 +950,7 @@ div.header-user img.avatar {
 	.menu .active > a{
 		font-size: 0;
 		margin-top: -5px;
-		padding: 0px 8px 2px;
+		padding: 0px 6px 2px;
 	}
 	
 	.menu a img {
@@ -990,5 +990,30 @@ div.header-user img.avatar {
 	.header-submenu .menu a {
 		padding-left: 3px;
 		padding-right: 3px;
+	}
+	.header-grid {
+		display: grid;
+		grid-template-columns: 44px 1fr 44px;
+		grid-template-rows: 20px 20px;
+		grid-template-areas: 'Logo TopMenu User' 'Logo SubMenu User';
+		margin: 6px 15px 6px 8px;
+		border-bottom: 1px solid #ccc;
+		padding-bottom: 6px;
+	}
+	
+	.header-logo {
+		grid-area: Logo;
+		margin-right: 4px;
+	}
+	
+	.header-topmenu {
+		grid-area: TopMenu;
+		margin: 0 auto;
+	}
+	
+	.header-user {
+		grid-area: User;
+		z-index: 100;
+		margin-left: 4px;
 	}
 }
