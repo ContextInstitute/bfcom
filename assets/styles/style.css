@@ -869,14 +869,6 @@ div.header-user img.avatar {
 	color: #1e1e1e;
 }
 
-@media (max-width:359px) {
-	.header-topmenu .menu a,
-	.menu .active > a{
-		padding-left: 3px;
-		padding-right: 3px;
-	}
-}
-
 .bfc-user-panels {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
@@ -974,6 +966,10 @@ div.header-user img.avatar {
 		padding-top: 2px;
 	}
 
+	.header-submenu .menu a {
+		padding: 4px 8px 4px;
+	}
+
 	.bfc-dash-accordion {
 		display: block;
 	}
@@ -986,5 +982,13 @@ div.header-user img.avatar {
 	}
 	.bfc-user-panels {
 		display: none;
+	}
+}
+
+@media (max-width:374px) {
+	.header-topmenu .menu a,
+	.header-submenu .menu a {
+		padding-left: 3px;
+		padding-right: 3px;
 	}
 }
