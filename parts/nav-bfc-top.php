@@ -14,12 +14,12 @@
 			<div class="dropdown-pane" id="user-dropdown" data-dropdown data-hover="true" data-hover-pane="true" data-auto-focus="true">
 				<ul>
 					<li><a href="/wp-admin/">Admin Dashboard</a></li>
-					<li><a href="/wp-login.php?action=logout">Logout</a></li>
+					<li><a href="<?php echo wp_logout_url(); ?>">Logout</a></li>
 					<!-- logout doesn't fully work yet -->
 					<li><a href="/members/<?php bp_loggedin_user_username(); ?>/profile/edit/">Edit My Profile</a></li>
 					<li><a href="/members/<?php bp_loggedin_user_username(); ?>/profile/change-avatar/">Change Avatar</a></li>
 					<li><a href="/members/<?php bp_loggedin_user_username(); ?>/messages/">Messages</a></li>
-					<li><a href="/members/<?php bp_loggedin_user_username(); ?>/compose/">Compose Message</a></li>
+					<li><a href="/members/<?php bp_loggedin_user_username(); ?>/messages/compose/">Compose Message</a></li>
 					<li><a href="/members/<?php bp_loggedin_user_username(); ?>/settings/">Email/Password Settings</a></li>
 					<li><a href="/members/<?php bp_loggedin_user_username(); ?>/settings/notifications/">Notification Settings</a></li>
 					<li><a href="/members/<?php bp_loggedin_user_username(); ?>/settings/profile/">Profile Settings</a></li>
