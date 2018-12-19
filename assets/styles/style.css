@@ -492,7 +492,7 @@ body {
 /* HEADER */
 .header-grid {
 	display: grid;
-	grid-template-columns: 50px 1fr 50px;
+	grid-template-columns: 52px 1fr 52px;
 	grid-template-rows: 20px 20px;
 	grid-template-areas: 'Logo TopMenu User' 'Logo SubMenu User';
 	margin: 10px 15px;
@@ -502,7 +502,11 @@ body {
 
 .header-logo {
 	grid-area: Logo;
-	margin-right: 10px;
+}
+
+.header-logo img,
+.header-user img {
+	max-width: 40px;
 }
 
 .header-topmenu {
@@ -513,7 +517,6 @@ body {
 .header-user {
 	grid-area: User;
 	z-index: 100;
-	margin-left: 10px;
 }
 
 .header-submenu {
@@ -531,10 +534,16 @@ body {
 
 @media (min-width:768px) {
 	.header-grid {
-		grid-template-columns: 70px 1fr 70px;
+		grid-template-columns: 72px 1fr 72px;
 		grid-template-rows: 30px 30px;
 		grid-template-areas: 'Logo TopMenu User' 'Logo SubMenu User';
 	}
+	.header-logo img,
+	.header-user img {
+		max-width: 60px;
+		vertical-align: bottom;
+	}
+
 }
 
 /* FORUMS */
@@ -993,7 +1002,7 @@ div.header-user img.avatar {
 	}
 	.header-grid {
 		display: grid;
-		grid-template-columns: 44px 1fr 44px;
+		grid-template-columns: 52px 1fr 52px;
 		grid-template-rows: 20px 20px;
 		grid-template-areas: 'Logo TopMenu User' 'Logo SubMenu User';
 		margin: 6px 15px 6px 8px;
@@ -1003,7 +1012,6 @@ div.header-user img.avatar {
 	
 	.header-logo {
 		grid-area: Logo;
-		margin-right: 4px;
 	}
 	
 	.header-topmenu {
@@ -1014,6 +1022,5 @@ div.header-user img.avatar {
 	.header-user {
 		grid-area: User;
 		z-index: 100;
-		margin-left: 4px;
 	}
 }
