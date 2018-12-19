@@ -1,7 +1,19 @@
 
 <header class="header-grid">
 	<div class="header-logo">
-		<a href="<?php echo home_url(); ?>"><img src="/wp-content/themes/bfcom/assets/images/logo9b.svg" alt="Logo"/></a>
+		<span data-toggle="logo-dropdown"><img class="logo-img" src="/wp-content/themes/bfcom/assets/images/logo9b.svg" alt="Logo"/><img src="/wp-content/themes/bfcom/assets/images/menuarrow.svg" alt="Menu Arrow"/></span>
+		<div class="dropdown-pane" id="logo-dropdown" data-dropdown data-hover="true" data-hover-pane="true" data-auto-focus="true">
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="/about/">About this site</a></li>
+			<li><a href="https://www.context.org">Main CI site</a></li>
+			<li><a href="/about/contact/">Contact</a></li>
+			<li><a href="/about/help/">Help</a></li>
+			<li><a href="/about/terms-rules/">Terms of Service</a></li>
+			<li><a href="/about/privacy-policy/">Privacy</a></li>
+		</ul>
+	</div>
+	
 	</div>
 	<div class="header-topmenu">
     <?php bfc_top_nav(); ?> <!-- this replaces the call to joints_top_nav(); -->
@@ -10,7 +22,7 @@
 		<a href="/wp-login.php?action=login">Log in</a>
 	<?php else : ?>
 		<div class="header-user">
-			<span data-toggle="user-dropdown"><?php bp_loggedin_user_avatar( 'type=full' ); ?></span>
+			<span data-toggle="user-dropdown"><img src="/wp-content/themes/bfcom/assets/images/menuarrow.svg" alt="Menu Arrow"/><?php bp_loggedin_user_avatar( 'type=full' ); ?></span>
 			<div class="dropdown-pane" id="user-dropdown" data-dropdown data-hover="true" data-hover-pane="true" data-auto-focus="true">
 				<ul>
 					<li><a href="/wp-admin/">Admin Dashboard</a></li>
