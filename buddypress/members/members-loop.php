@@ -24,44 +24,11 @@ bp_nouveau_before_loop(); ?>
 			<div class="list-wrap">
 
 				<div class="item-avatar">
-					<a href="<?php bp_member_permalink(); ?>"><?php bp_member_avatar( bp_nouveau_avatar_args() ); ?></a>
+					<a href="<?php bp_member_permalink(); ?>"><?php bp_member_avatar( bp_nouveau_avatar_args() ); ?></a><br>
+					<span class="list-title member-name">
+						<a href="<?php bp_member_permalink(); ?>"><?php bp_member_name(); ?></a>
+					</span>
 				</div>
-
-				<div class="item">
-
-					<div class="item-block">
-
-						<h2 class="list-title member-name">
-							<a href="<?php bp_member_permalink(); ?>"><?php bp_member_name(); ?></a>
-						</h2>
-
-						<?php if ( bp_nouveau_member_has_meta() ) : ?>
-							<p class="item-meta last-activity">
-								<?php bp_nouveau_member_meta(); ?>
-							</p><!-- #item-meta -->
-						<?php endif; ?>
-
-						<?php
-						bp_nouveau_members_loop_buttons(
-							array(
-								'container'      => 'ul',
-								'button_element' => 'button',
-							)
-						);
-?>
-
-					</div>
-
-					<?php if ( bp_get_member_latest_update() && ! bp_nouveau_loop_is_grid() ) : ?>
-					<div class="user-update">
-						<p class="update"> <?php bp_member_latest_update(); ?></p>
-					</div>
-						<?php endif; ?>
-
-				</div><!-- // .item -->
-
-
-
 			</div>
 		</li>
 
