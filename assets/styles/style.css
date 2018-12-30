@@ -1024,29 +1024,29 @@ div.header-user img.avatar {
 		z-index: 100;
 	}
 }
-ul#members-list {
+.directory.members ul#members-list {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 	grid-gap: 8px;
 }
 
-#members-list.bp-list:before {
+.directory.members #members-list.bp-list:before {
 	content: normal;
 	display: inherit;
 }
-#members-list.bp-list li.item-entry {
+.directory.members #members-list.bp-list li.item-entry {
 	margin: 0;
 	padding: 0;
 	border-bottom: 0 none #000000;
 }
 
-#members-list .item-avatar img.avatar {
+.directory.members #members-list .item-avatar img.avatar {
 	width: 120px;
 	height: 120px;
 	object-fit: cover;
 }
 
-#members-list div.list-wrap {
+.directory.members #members-list div.list-wrap {
 	display: flex;
 	justify-content: center;
 }
