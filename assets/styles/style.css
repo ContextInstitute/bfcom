@@ -1026,7 +1026,7 @@ div.header-user img.avatar {
 }
 .directory.members ul#members-list {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
 	grid-gap: 8px;
 }
 
@@ -1040,13 +1040,42 @@ div.header-user img.avatar {
 	border-bottom: 0 none #000000;
 }
 
+.directory.members #members-list.bp-list .item-avatar {
+	font-size: 16px;
+	line-height: 19px;
+}
+
+
 .directory.members #members-list .item-avatar img.avatar {
 	width: 120px;
 	height: 120px;
 	object-fit: cover;
+	margin: 10px 0 8px;
+	border-radius: 5px;
 }
 
 .directory.members #members-list div.list-wrap {
 	display: flex;
 	justify-content: center;
+}
+
+@media (max-width:767px) {
+	.directory.members ul#members-list {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+		grid-gap: 6px;
+	}
+	
+	.directory.members #members-list.bp-list .item-avatar {
+		font-size: 12px;
+		line-height: 13px;
+	}
+	
+	.directory.members #members-list .item-avatar img.avatar {
+		width: 80px;
+		height: 80px;
+		margin: 8px 0 6px;
+		border-radius: 3px;
+	}
+	
 }
