@@ -21,37 +21,25 @@
 		while ( bp_group_members() ) :
 			bp_group_the_member();
 		?>
-
 			<li <?php bp_member_class( array( 'item-entry' ) ); ?> data-bp-item-id="<?php echo esc_attr( bp_get_group_member_id() ); ?>" data-bp-item-component="members">
-
 				<div class="list-wrap">
 
 					<div class="item-avatar">
-						<a href="<?php bp_group_member_domain(); ?>">
-							<?php bp_group_member_avatar(); ?>
-						</a>
+						<?php bp_group_member_avatar(); ?><br>
+						<span class="list-title member-name"><?php bp_member_name(); ?></span>
 					</div>
 
-					<div class="item">
-
-						<div class="item-block">
-							<h3 class="list-title member-name"><?php bp_group_member_link(); ?></h3>
-
-							<p class="joined item-meta">
-								<?php bp_group_member_joined_since(); ?>
-							</p>
-
-							<?php bp_nouveau_group_hook( '', 'members_list_item' ); ?>
-
-							<?php bp_nouveau_members_loop_buttons(); ?>
-						</div>
-
+					<div class="item-intro">
+						<?php
+						$args = array('field' => 8, 'user_id' => bp_get_group_member_id());
+						$intro = bp_get_profile_field_data($args);
+						if ($intro) {
+							echo wpautop($intro);
+						}
+						?>
 					</div>
-
 				</div><!-- // .list-wrap -->
-
 			</li>
-
 		<?php endwhile; ?>
 
 	</ul>
