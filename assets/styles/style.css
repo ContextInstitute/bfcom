@@ -1079,3 +1079,37 @@ div.header-user img.avatar {
 	}
 	
 }
+
+#members-group-list .item-intro {
+	margin-left: 130px;
+	padding: 12px 12px 14px 0;
+	max-width: 640px;
+	font-size: 17px;
+	font-family: Merriweather,Georgia,serif;
+}
+
+#members-group-list .item-avatar {
+	float: left;
+	text-align: center;
+	width: 115px;
+	font-size: 13px;
+	margin-right: 0;
+}
+
+
+#members-group-list .item-avatar img {
+	border: none;
+	max-width: 80px;
+	padding: 0;
+	margin: 12px auto 0 auto;
+	border-radius: 12px;
+}
+
+.single-item.group-members .page-title {
+	font-size: 16px;
+}
+
+.single-item.group-members .bp-screen-title {
+	margin: 0 0 10px 0;
+	line-height: 1em;
+}
