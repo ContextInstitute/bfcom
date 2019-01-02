@@ -3,17 +3,16 @@
 	<div class="header-logo">
 		<span data-toggle="logo-dropdown"><img class="logo-img" src="/wp-content/themes/bfcom/assets/images/logo9b.svg" alt="Logo"/><img src="/wp-content/themes/bfcom/assets/images/menuarrow.svg" alt="Menu Arrow"/></span>
 		<div class="dropdown-pane" id="logo-dropdown" data-dropdown data-hover="true" data-hover-pane="true" data-auto-focus="true">
-		<ul>
-			<li><a href="/">Home</a></li>
-			<li><a href="/about/">About this site</a></li>
-			<li><a href="https://www.context.org">Main CI site</a></li>
-			<li><a href="/about/contact/">Contact</a></li>
-			<li><a href="/about/help/">Help</a></li>
-			<li><a href="/about/terms-rules/">Terms of Service</a></li>
-			<li><a href="/about/privacy-policy/">Privacy</a></li>
-		</ul>
-	</div>
-	
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/about/">About this site</a></li>
+				<li><a href="https://www.context.org">Main CI site</a></li>
+				<li><a href="/about/contact/">Contact</a></li>
+				<li><a href="/about/help/">Help</a></li>
+				<li><a href="/about/terms-rules/">Terms of Service</a></li>
+				<li><a href="/about/privacy-policy/">Privacy</a></li>
+			</ul>
+		</div>
 	</div>
 	<div class="header-topmenu">
     <?php bfc_top_nav(); ?> <!-- this replaces the call to joints_top_nav(); -->
