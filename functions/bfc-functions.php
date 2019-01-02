@@ -10,8 +10,6 @@ function replace_core_jquery_version() {
 }
 add_action( 'wp_enqueue_scripts', 'replace_core_jquery_version' );
 
-define('BP_DEFAULT_COMPONENT', 'profile' );
-
 // Remove the Toolbar for all users
 add_filter('show_admin_bar','__return_false');
 
