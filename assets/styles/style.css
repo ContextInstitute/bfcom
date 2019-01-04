@@ -1024,6 +1024,8 @@ div.header-user img.avatar {
 		z-index: 100;
 	}
 }
+
+/* member directory */
 .directory.members ul#members-list {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
