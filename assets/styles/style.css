@@ -613,12 +613,14 @@ div.header-user img.avatar {
 	padding-bottom: 10px;
 }
 
-#bbpress-forums div.bbp-reply-author a.bbp-author-name {
+#bbpress-forums div.bbp-reply-author a.bbp-author-name,
+#bbpress-forums div.bbp-reply-author span.bbp-author-name {
 	font-size: 13px;
 	margin-left: 0px;
 	margin-right: 0px;
 	line-height: 13px;
 	margin-top: 5px;
+	display: block;
 }
 
 #bbpress-forums div.bbp-reply-content {
