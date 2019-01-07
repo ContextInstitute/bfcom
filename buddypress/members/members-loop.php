@@ -26,11 +26,11 @@ bp_nouveau_before_loop(); ?>
 				<div class="item-avatar">
 					<span data-toggle="member-dropdown-<?php bp_member_user_id() ; ?>"><?php bp_member_avatar( bp_nouveau_avatar_args() ); ?></span><br>
 					<span class="list-title member-name"><?php bp_member_name(); ?></span>
-					<div class="dropdown-pane" id="member-dropdown-<?php bp_member_user_id(); ?>" data-dropdown data-hover="true" data-hover-pane="true" data-auto-focus="true">
+					<div class="dropdown-pane" id="member-dropdown-<?php bp_member_user_id(); ?>" data-dropdown data-hover="true" data-hover-pane="true" data-auto-focus="false">
 							<a href="/members/<?php echo bp_core_get_username(bp_loggedin_user_id()); ?>/messages/compose/?r=<?php echo bp_core_get_username(bp_get_member_user_id()); ?>">Send a message</a><br>
-							<?php bp_follow_add_follow_button('leader_id=' . bp_get_member_user_id()); ?> <br>
+							<br><?php bp_follow_add_follow_button('leader_id=' . bp_get_member_user_id()); ?> <br>
 							<a href="/members/<?php echo bp_core_get_username(bp_get_member_user_id()); ?>">Visit profile</a><br>
-							Plus info from profile
+							<br>Plus info from profile
 					</div>
 				</div>
 			</div>
