@@ -15,9 +15,16 @@
 	<div class="bbp-reply-author">
 
 		<?php do_action( 'bbp_theme_before_reply_author_details' ); ?>
-
-		<?php bbp_reply_author_link( array( 'sep' => '<br />', 'show_role' => false ) ); ?>
+		<span data-toggle="reply-author-dropdown-<?php echo esc_attr( bbp_get_reply_id() ); ?>"><?php bbp_reply_author_avatar( bbp_get_reply_id(),  $size = 80 ); ?></span><br>
+		<div class="dropdown-pane" id="reply-author-dropdown-<?php echo esc_attr( bbp_get_reply_id() ); ?>" data-dropdown data-hover="true" data-hover-pane="true" data-auto-focus="false">
+			<a href="/members/<?php echo bp_core_get_username(bp_loggedin_user_id()); ?>/messages/compose/?r=<?php echo bp_core_get_username(bbp_get_reply_author_id()); ?>">Send a message</a><br>
+			<br><?php bp_follow_add_follow_button('leader_id=' . bbp_get_reply_author_id()); ?> <br>
+			<a href="/members/<?php echo bp_core_get_username(bbp_get_reply_author_id()); ?>">Visit profile</a><br>
+			<br>Plus info from profile
+		</div>
+		<span class="bbp-author-name" rel="nofollow"><?php bbp_reply_author_display_name( bbp_get_reply_id() ); ?></span>
 		<span class="bbp-reply-post-date"><?php bbp_reply_post_date(); ?></span>
+
 		<?php do_action( 'bbp_theme_after_reply_author_details' ); ?>
 
 	</div><!-- .bbp-reply-author -->
