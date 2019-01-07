@@ -27,11 +27,11 @@
 					<div class="item-avatar">
 						<span data-toggle="gmem-dropdown-<?php echo esc_attr( bp_get_group_member_id() ); ?>"><?php bp_group_member_avatar(); ?></span><br>
 						<span class="list-title member-name"><?php bp_member_name(); ?></span>
-						<div class="dropdown-pane" id="gmem-dropdown-<?php echo esc_attr( bp_get_group_member_id() ); ?>" data-dropdown data-hover="true" data-hover-pane="true" data-auto-focus="true">
+						<div class="dropdown-pane" id="gmem-dropdown-<?php echo esc_attr( bp_get_group_member_id() ); ?>" data-dropdown data-hover="true" data-hover-pane="true" data-auto-focus="false">
 							<a href="/members/<?php echo bp_core_get_username(bp_loggedin_user_id()); ?>/messages/compose/?r=<?php echo bp_core_get_username(bp_get_group_member_id()); ?>">Send a message</a><br>
-							<?php bp_follow_add_follow_button('leader_id=' . bp_get_group_member_id()); ?> <br>
+							<br><?php bp_follow_add_follow_button('leader_id=' . bp_get_group_member_id()); ?> <br>
 							<a href="/members/<?php echo bp_core_get_username(bp_get_group_member_id()); ?>">Visit profile</a><br>
-							Plus info from profile
+							<br>Plus info from profile
 						</div>
 					</div>
 					<div class="item-intro">

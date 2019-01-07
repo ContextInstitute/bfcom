@@ -82,12 +82,14 @@ function bfc_nouveau_has_nav( $args = array() ) {
 		} else {
 			bp_nouveau_set_nav_item_order( $group_nav, array('home','forum','members','docs','activity','admin'), $parent_slug );
 		}
-		$nav = $group_nav->get_secondary(
-			array(
-				'parent_slug'     => $parent_slug,
-				'user_has_access' => (bool) $n['user_has_access'],
-			)
-		);
+		if($group_nav){
+			$nav = $group_nav->get_secondary(
+				array(
+					'parent_slug'     => $parent_slug,
+					'user_has_access' => (bool) $n['user_has_access'],
+				)
+			);
+		}
 	// Build the nav for the displayed user
 	} elseif ( bp_is_user() ) {
 		$bp_nouveau->displayed_nav = 'personal';
