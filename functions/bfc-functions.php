@@ -246,6 +246,88 @@ function bfc_top_nav_is_active($topmenuparent) {
 	}
 }
 
+// footer navitation menu builder
+function bfc_bottom_nav_menu_builder() {
+	$footeritemarray = array (
+		array (
+			'id' => 'menu-item-about', // menu item id 106
+			'classes' => 'menu-item-106', // any unique classes for menu item
+			'page_name' => 'about', // page name to highlight
+			'link_url' => '/about/', // page, use relative urls
+			'text' => 'About' // menu item text
+		),
+		array (
+			'id' => 'menu-item-contact',
+			'classes' => 'menu-item-162',
+			'page_name' => 'contact',
+			'link_url' => '/about-2/contact/',
+			'text' => 'Contact'
+		),
+		array (
+			'id' => 'menu-item-help',
+			'classes' => 'menu-item-161',
+			'page_name' => 'help',
+			'link_url' => '/about-2/help/',
+			'text' => 'Help'
+		),
+		array (
+			'id' => 'menu-item-terms',
+			'classes' => 'menu-item-160',
+			'page_name' => 'terms-rules',
+			'link_url' => '/about-2/terms-rules/',
+			'text' => 'Terms'
+		),
+		array (
+			'id' => 'menu-item-privacy',
+			'classes' => 'menu-item-159',
+			'page_name' => 'privacy-policy',
+			'link_url' => '/about-2/privacy-policy/',
+			'text' => 'Privacy'
+		),
+		array (
+			'id' => 'menu-item-top',
+			'classes' => 'menu-item-168',
+			'page_name' => '',
+			'link_url' => '#top',
+			'text' => 'Top'
+		)
+	);
+	return $footeritemarray;
+}
+
+function bfc_bottom_nav() {
+	// Build collection for this template method
+	$footermenuitemarray = bfc_bottom_nav_menu_builder();
+
+	// set $bottomnav to its initial value
+	$bottomnav = '<ul id="menu-bfcom-footer-menu" class="menu">'; //start with the opening ul and its selectors
+
+	$active_item_found = false;
+	// loop through each menu item in the collection to build topnav html
+	foreach ($footermenuitemarray as $menuitem) {
+		$thismenuitem =  '<li ';
+		$thismenuitem .= 'id="';
+		$thismenuitem .= $menuitem['id'];
+		$thismenuitem .= '" class="menu-item-footer menu-item-type-post_type menu-item-object-page';
+		$thismenuitem .= $menuitem['classes'];
+
+		if (($menuitem['page_name'] != '') && (is_page($menuitem['page_name']))) {
+			// $thismenuitem .= ' active';
+			$active_item_found = true;
+		}
+		$thismenuitem .= '" role="menuitem"><a href="';
+		$thismenuitem .= $menuitem['link_url'];
+		$thismenuitem .= '">';
+		$thismenuitem .= $menuitem['text'];
+		$thismenuitem .= '</a></li>';
+
+		$bottomnav .= $thismenuitem;
+	}
+	$bottomnav .= '</ul>';
+
+	echo $bottomnav;
+}
+
 /* Update post actions menu by removing Spam item */
 function bfc_change_topic_admin_links ($r) {
 	$r['links'] = apply_filters( 'bfc_topic_admin_links', array(
@@ -381,7 +463,7 @@ function bfc_widgets_init() {
 }
 add_action( 'widgets_init', 'bfc_widgets_init' );
 
-// From https://gist.github.com/rohmann/6151699 
+// From https://gist.github.com/rohmann/6151699
 add_action('load-users.php',function() {
 
 	if(isset($_GET['action']) && isset($_GET['bp_gid']) && isset($_GET['users'])) {
