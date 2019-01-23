@@ -252,42 +252,36 @@ function bfc_bottom_nav_menu_builder() {
 		array (
 			'id' => 'menu-item-about', // menu item id 106
 			'classes' => 'menu-item-106', // any unique classes for menu item
-			'page_name' => 'about', // page name to highlight
 			'link_url' => '/about/', // page, use relative urls
 			'text' => 'About' // menu item text
 		),
 		array (
 			'id' => 'menu-item-contact',
 			'classes' => 'menu-item-162',
-			'page_name' => 'contact',
 			'link_url' => '/about-2/contact/',
 			'text' => 'Contact'
 		),
 		array (
 			'id' => 'menu-item-help',
 			'classes' => 'menu-item-161',
-			'page_name' => 'help',
 			'link_url' => '/about-2/help/',
 			'text' => 'Help'
 		),
 		array (
 			'id' => 'menu-item-terms',
 			'classes' => 'menu-item-160',
-			'page_name' => 'terms-rules',
 			'link_url' => '/about-2/terms-rules/',
 			'text' => 'Terms'
 		),
 		array (
 			'id' => 'menu-item-privacy',
 			'classes' => 'menu-item-159',
-			'page_name' => 'privacy-policy',
 			'link_url' => '/about-2/privacy-policy/',
 			'text' => 'Privacy'
 		),
 		array (
 			'id' => 'menu-item-top',
 			'classes' => 'menu-item-168',
-			'page_name' => '',
 			'link_url' => '#top',
 			'text' => 'Top'
 		)
@@ -302,7 +296,6 @@ function bfc_bottom_nav() {
 	// set $bottomnav to its initial value
 	$bottomnav = '<ul id="menu-bfcom-footer-menu" class="menu">'; //start with the opening ul and its selectors
 
-	$active_item_found = false;
 	// loop through each menu item in the collection to build topnav html
 	foreach ($footermenuitemarray as $menuitem) {
 		$thismenuitem =  '<li ';
@@ -310,11 +303,6 @@ function bfc_bottom_nav() {
 		$thismenuitem .= $menuitem['id'];
 		$thismenuitem .= '" class="menu-item-footer menu-item-type-post_type menu-item-object-page';
 		$thismenuitem .= $menuitem['classes'];
-
-		if (($menuitem['page_name'] != '') && (is_page($menuitem['page_name']))) {
-			// $thismenuitem .= ' active';
-			$active_item_found = true;
-		}
 		$thismenuitem .= '" role="menuitem"><a href="';
 		$thismenuitem .= $menuitem['link_url'];
 		$thismenuitem .= '">';
@@ -323,8 +311,11 @@ function bfc_bottom_nav() {
 
 		$bottomnav .= $thismenuitem;
 	}
+	$bottomnav .= ' © ';
+	$bottomnav .= date('Y');
+	$bottomnav .= ' BFNet.';
+	$bottomnav .= '<p></p>';
 	$bottomnav .= '</ul>';
-
 	echo $bottomnav;
 }
 

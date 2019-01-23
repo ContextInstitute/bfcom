@@ -459,6 +459,23 @@ FOOTER STYLES
 .footer {
 	clear: both;
 	margin-top: 1em;
+    text-align: center;
+}
+
+.footer ul {
+    display: inline-block;
+    margin: 5px 0;
+    padding: 2px;
+}
+
+.footer li {
+    display: inline-block;
+}
+
+.footer li a {
+    display: inline-block;
+    padding: 5px;
+    text-decoration: none;
 }
 
 /*********************
@@ -743,7 +760,11 @@ div.header-user img.avatar {
 	}
 
 	.header-grid,
-	.forum.single-item .page-title, .menu-item-footer {
+	.forum.single-item .page-title {
+		font-size: calc(14px + 2*((100vw - 320px)/320));
+	}
+
+	.footer {
 		font-size: calc(14px + 2*((100vw - 320px)/320));
 	}
 }
@@ -1105,7 +1126,6 @@ div.header-user img.avatar {
 	font-size: 13px;
 	margin-right: 0;
 }
-
 
 #members-group-list .item-avatar img {
 	border: none;
