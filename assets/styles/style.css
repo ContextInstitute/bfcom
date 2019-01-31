@@ -459,23 +459,27 @@ FOOTER STYLES
 .footer {
 	clear: both;
 	margin-top: 1em;
-    text-align: center;
+	margin-bottom: 1em;
+	text-align: center;
 }
 
 .footer ul {
-    display: inline-block;
-    margin: 5px 0;
-    padding: 2px;
+	display: inline-block;
+	margin: 5px 0;
+	padding: 2px;
 }
 
-.footer li {
-    display: inline-block;
+#bfc-copyright {
+	display: inline-block;
+	opacity: 0.6;
+	color: #1e1e1e;
 }
 
+.footer li, 
 .footer li a {
-    display: inline-block;
-    padding: 5px;
-    text-decoration: none;
+	display: inline-block;
+	padding: 5px;
+	text-decoration: none;
 }
 
 /*********************
@@ -765,7 +769,12 @@ div.header-user img.avatar {
 	}
 
 	.footer {
-		font-size: calc(14px + 2*((100vw - 320px)/320));
+		font-size: calc(11px + 5*((100vw - 320px)/320));
+	}
+
+	.footer li, 
+	.footer li a {
+		padding: calc(2px + 3*((100vw - 320px)/320));
 	}
 }
 
@@ -781,6 +790,15 @@ div.header-user img.avatar {
 	.header-grid,
 	.forum.single-item .page-title {
 		font-size: 16px;
+	}
+
+	.footer {
+		font-size: 16px;
+	}
+
+	.footer li, 
+	.footer li a {
+		padding: 5px;
 	}
 }
 
