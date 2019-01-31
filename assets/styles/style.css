@@ -459,6 +459,27 @@ FOOTER STYLES
 .footer {
 	clear: both;
 	margin-top: 1em;
+	margin-bottom: 1em;
+	text-align: center;
+}
+
+.footer ul {
+	display: inline-block;
+	margin: 5px 0;
+	padding: 2px;
+}
+
+#bfc-copyright {
+	display: inline-block;
+	opacity: 0.6;
+	color: #1e1e1e;
+}
+
+.footer li, 
+.footer li a {
+	display: inline-block;
+	padding: 5px;
+	text-decoration: none;
 }
 
 /*********************
@@ -746,6 +767,15 @@ div.header-user img.avatar {
 	.forum.single-item .page-title {
 		font-size: calc(14px + 2*((100vw - 320px)/320));
 	}
+
+	.footer {
+		font-size: calc(11px + 5*((100vw - 320px)/320));
+	}
+
+	.footer li, 
+	.footer li a {
+		padding: calc(2px + 3*((100vw - 320px)/320));
+	}
 }
 
 @media (min-width: 641px) {
@@ -760,6 +790,15 @@ div.header-user img.avatar {
 	.header-grid,
 	.forum.single-item .page-title {
 		font-size: 16px;
+	}
+
+	.footer {
+		font-size: 16px;
+	}
+
+	.footer li, 
+	.footer li a {
+		padding: 5px;
 	}
 }
 
@@ -841,7 +880,7 @@ div.header-user img.avatar {
 }
 /* Hightlights active/selected menu item.  */
 .menu .active > a,
-.bp-navs .selected a, 
+.bp-navs .selected a,
 .bp-navs span.selected {
 	background: none;
 	color: #1e1e1e;
@@ -969,16 +1008,16 @@ div.header-user img.avatar {
 		margin-top: -5px;
 		padding: 0px 6px 2px;
 	}
-	
+
 	.menu a img {
 		padding: 2px 2px 0px;
 		height: 22px;
 	}
-	
+
 	.bp-navs .selected a {
 		font-size: inherit;
 	}
-	
+
 	.header-submenu {
 		padding-top: 2px;
 	}
@@ -1017,16 +1056,16 @@ div.header-user img.avatar {
 		border-bottom: 1px solid #ccc;
 		padding-bottom: 6px;
 	}
-	
+
 	.header-logo {
 		grid-area: Logo;
 	}
-	
+
 	.header-topmenu {
 		grid-area: TopMenu;
 		margin: 0 auto;
 	}
-	
+
 	.header-user {
 		grid-area: User;
 		z-index: 100;
@@ -1075,19 +1114,19 @@ div.header-user img.avatar {
 		grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
 		grid-gap: 6px;
 	}
-	
+
 	.directory.members #members-list.bp-list .item-avatar {
 		font-size: 12px;
 		line-height: 13px;
 	}
-	
+
 	.directory.members #members-list .item-avatar img.avatar {
 		width: 80px;
 		height: 80px;
 		margin: 8px 0 6px;
 		border-radius: 3px;
 	}
-	
+
 }
 
 #members-group-list .item-intro {
@@ -1105,7 +1144,6 @@ div.header-user img.avatar {
 	font-size: 13px;
 	margin-right: 0;
 }
-
 
 #members-group-list .item-avatar img {
 	border: none;
