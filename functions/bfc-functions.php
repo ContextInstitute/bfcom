@@ -295,6 +295,11 @@ function bfc_bottom_nav() {
 
 	// set $bottomnav to its initial value
 	$bottomnav = '<ul id="menu-bfcom-footer-menu" class="menu">'; //start with the opening ul and its selectors
+	$bottomnav .= '<li id="bfc-copyright"> © ';
+	$bottomnav .= date('Y');
+	$bottomnav .= ' ';
+	$bottomnav .= get_bloginfo('name');
+	$bottomnav .= ' </li>';
 
 	// loop through each menu item in the collection to build topnav html
 	foreach ($footermenuitemarray as $menuitem) {
@@ -311,11 +316,8 @@ function bfc_bottom_nav() {
 
 		$bottomnav .= $thismenuitem;
 	}
-	$bottomnav .= ' © ';
-	$bottomnav .= date('Y');
-	$bottomnav .= ' BFNet.';
-	$bottomnav .= '<p></p>';
 	$bottomnav .= '</ul>';
+	$bottomnav .= '<p></p>';
 	echo $bottomnav;
 }
 
