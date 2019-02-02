@@ -174,10 +174,10 @@ function bfc_top_nav_menu_builder() {
 		array (
 			'id' => 'bfc-topnav-blogs',
 			'classes' => 'blogs menu-item-type-post_type menu-item-object-page',
-			'parent_nav' => 'blogs',
-			'link_url' => '/sites/',
+			'parent_nav' => 'blog',
+			'link_url' => '/blog/',
 			'icon_url' => '/wp-content/themes/bfcom/assets/images/blog.svg',
-			'text' => 'Blogs'
+			'text' => 'Blog'
 		),
 		array (
 			'id' => 'bfc-topnav-search',
@@ -237,7 +237,7 @@ function bfc_top_nav_is_active($topmenuparent) {
 		return true;
 	} elseif ($topmenuparent == 'resources' && bp_docs_is_bp_docs_page()) {
 		return true;
-	} elseif ($topmenuparent == 'blogs' && is_page('sites')) {
+	} elseif ($topmenuparent == 'blog'  && (is_home() || is_single() )) {
 		return true;
 	} elseif ($topmenuparent == 'search' && is_page('activity')) {
 		return true;
@@ -317,7 +317,6 @@ function bfc_bottom_nav() {
 		$bottomnav .= $thismenuitem;
 	}
 	$bottomnav .= '</ul>';
-	$bottomnav .= '<p></p>';
 	echo $bottomnav;
 }
 
