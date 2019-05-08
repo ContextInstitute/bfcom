@@ -479,3 +479,51 @@ add_action('load-users.php',function() {
 		<?php
 		});
 	});
+
+/*	This function restructures the Groups directory page so the default tab is "My Groups". 
+	It also adds a second tab for "Other Groups".
+*/
+
+	function bfc_groups_dir_nav  ( $nav ) {
+		if ( is_user_logged_in() ) {
+
+			unset($nav['all']);
+			$nav['personal']['li_class'] = 'selected';
+			$nav['personal']['position'] = '5';
+
+
+			$my_groups_count = bp_get_total_group_count_for_user( bp_loggedin_user_id() );
+			$other_groups_count = bp_get_total_group_count() - $my_groups_count;
+			if ( $other_groups_count ) {
+				$nav['others'] = array(
+					'component' => 'groups',
+					'slug'      => 'others', // slug is used because BP_Core_Nav requires it, but it's the scope
+					'li_class'  => array(),
+					'link'      => bp_get_groups_directory_permalink(),
+					'text'      => __( 'Other Groups', 'buddypress' ),
+					'count'     => $other_groups_count,
+					'position'  => 20,
+				);
+			}
+		}
+		return $nav;
+	}
+	add_filter( 'bp_nouveau_get_groups_directory_nav_items', 'bfc_groups_dir_nav' ); 
+
+// This function creates the query for the "Other Groups" tab.
+
+	function bfc_ajax_querystring ($query_string, $object, $filter, $scope, $page, $search_terms, $extras) {
+		if ( is_user_logged_in() ) {
+
+			$my_groups_count = bp_get_total_group_count_for_user( bp_loggedin_user_id() );
+			$other_groups_count = bp_get_total_group_count() - $my_groups_count;
+			if ( $other_groups_count && 'others' === $scope ) {
+				$user_id = ( bp_displayed_user_id() ) ? bp_displayed_user_id() : bp_loggedin_user_id();
+				$excluded_groups = groups_get_user_groups($user_id);
+				$query_string   .= '&exclude=' . implode( ',', $excluded_groups[ 'groups' ] );
+			}
+		}
+		return $query_string;
+	}
+
+	add_filter( 'bp_nouveau_ajax_querystring', 'bfc_ajax_querystring', 10, 7 );
