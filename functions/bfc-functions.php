@@ -527,3 +527,8 @@ add_action('load-users.php',function() {
 	}
 
 	add_filter( 'bp_nouveau_ajax_querystring', 'bfc_ajax_querystring', 10, 7 );
+
+	function bfc_xprofile_allowedtags () {
+		remove_filter( 'bp_get_the_profile_field_edit_value', 'wp_filter_kses', 1 );
+	}
+	add_action( 'wp_loaded', 'bfc_xprofile_allowedtags');
