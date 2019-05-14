@@ -532,3 +532,32 @@ add_action('load-users.php',function() {
 		remove_filter( 'bp_get_the_profile_field_edit_value', 'wp_filter_kses', 1 );
 	}
 	add_action( 'wp_loaded', 'bfc_xprofile_allowedtags');
+// The next two functions customize the text editor and add the "Add Media" functionality
+	function bfc_expand_profile_editor ($ed_args = array()){
+		$ed_args['teeny'] = false;
+		$ed_args['media_buttons'] = true;
+		return $ed_args;
+	}
+
+	add_filter ('bp_xprofile_field_type_textarea_editor_args', 'bfc_expand_profile_editor' );
+
+	function bfc_expand_bbp_editor ($ed_args = array()){
+		$ed_args['teeny'] = false;
+		$ed_args['media_buttons'] = true;
+		return $ed_args;
+	}
+
+	add_filter ('bbp_after_get_the_content_parse_args', 'bfc_expand_bbp_editor' );
+
+// This insures that "Upload Files" is the selected tab when you choose Add Media in composing a textarea entry. 
+	function cc_media_default() {
+		?>
+		<script type="text/javascript">
+			jQuery(document).ready(function($){ wp.media.controller.Library.prototype.defaults.contentUserSetting=false; });
+		</script>
+		<?php
+	}
+	
+	add_action( 'admin_footer-post-new.php', 'cc_media_default' );
+	add_action( 'admin_footer-post.php', 'cc_media_default' );
+	
