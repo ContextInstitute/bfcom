@@ -2,6 +2,9 @@
 
 // All of the bfcom-specific functions
 
+// The following function replaces the default version of jQuery in WordPress with a newer version that mateches the version in Foundtion 6.4
+// See https://github.com/ContextInstitute/bfcom/issues/97 for more detail
+
 function replace_core_jquery_version() {
 	wp_deregister_script( 'jquery-core' );
 	wp_register_script( 'jquery-core', "https://code.jquery.com/jquery-3.3.1.min.js", array(), '3.3.1' );
@@ -10,10 +13,11 @@ function replace_core_jquery_version() {
 }
 add_action( 'wp_enqueue_scripts', 'replace_core_jquery_version' );
 
-// Remove the Toolbar for all users
+// Remove the front-end Toolbar for all users so it doesn't interfere with our theme
+
 add_filter('show_admin_bar','__return_false');
 
-// This is based on https://codex.buddypress.org/developer/navigation-api/
+// Customizes parts of the BP navs. This is based on https://codex.buddypress.org/developer/navigation-api/
 function bfc_nav_configure() {
 	global $bp;
 	if( bp_is_group() ) {
@@ -320,7 +324,7 @@ function bfc_bottom_nav() {
 	echo $bottomnav;
 }
 
-/* Update post actions menu by removing Spam item */
+/* Update post actions menu (in a forum topic) by removing Spam item */
 function bfc_change_topic_admin_links ($r) {
 	$r['links'] = apply_filters( 'bfc_topic_admin_links', array(
 		'edit' => bbp_get_topic_edit_link ( $r ),
@@ -334,7 +338,7 @@ function bfc_change_topic_admin_links ($r) {
 }
 add_filter ('bbp_topic_admin_links', 'bfc_change_topic_admin_links' ) ;
 
-/* Replace post actions menu text with icons, add title to show up as tooltips */
+/* Replace post actions menu text (in a forum topic) with icons, add title to show up as tooltips */
 function bfc_filter_bbp_actions_topic_links( $array, $r_id ) {
 
 	$array = str_replace('>Edit<', 'title="Edit this item"><img src="/wp-content/themes/bfcom/assets/images/edit.svg"><', $array);
@@ -402,7 +406,7 @@ function bfc_add_forum_to_title ($title){
 add_filter('bbp_get_forum_title', 'bfc_add_forum_to_title', 10, 2);
 
 /**
- * Register our sidebars and widgetized areas.
+ * Register our sidebars and widgetized areas on the user and group home pages.
  *
  */
 function bfc_widgets_init() {
@@ -455,7 +459,7 @@ function bfc_widgets_init() {
 }
 add_action( 'widgets_init', 'bfc_widgets_init' );
 
-// From https://gist.github.com/rohmann/6151699
+// This is an admin mod (Admin>Users>Bulk Actions) to allow for bulk adding to BuddyPress groups. From https://gist.github.com/rohmann/6151699
 add_action('load-users.php',function() {
 
 	if(isset($_GET['action']) && isset($_GET['bp_gid']) && isset($_GET['users'])) {
@@ -550,6 +554,7 @@ add_action('load-users.php',function() {
 	add_filter ('bbp_after_get_the_content_parse_args', 'bfc_expand_bbp_editor' );
 
 // This insures that "Upload Files" is the selected tab when you choose Add Media in composing a textarea entry. 
+
 	function cc_media_default() {
 		?>
 		<script type="text/javascript">
