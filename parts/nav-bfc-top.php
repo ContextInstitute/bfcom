@@ -16,6 +16,15 @@
 	</div>
 	<div class="header-topmenu">
     <?php bfc_top_nav(); ?> <!-- this replaces the call to joints_top_nav(); -->
+		<!--- <span class="search menu-item-type-post_type menu-item-object-page" data-toggle="search-dropdown"><img src="/wp-content/themes/bfcom/assets/images/search.svg" alt="Trial Search Box"/> <p>Search</p> </span> -->
+		<div class="dropdown-pane" id="search-dropdown" data-dropdown data-hover="true" data-hover-pane="true" data-auto-focus="true">	
+			<form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
+ 				<div class="input-group">
+  					<input type="search" class="search-field input-group-field" placeholder="<?php echo esc_attr_x( 'Search...', 'jointswp' ) ?>" value="<?php echo get_search_query() ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'jointswp' ) ?>" />
+ 			 		<input type="submit" class="search-submit button input-group-button" value="<?php echo esc_attr_x( 'Search', 'jointswp' ) ?>" />
+ 				</div>
+			</form>
+		</div>
 	</div>
 	<?php if(! is_user_logged_in() ) : ?>
 		<a href="/wp-login.php?action=login">Log in</a>
