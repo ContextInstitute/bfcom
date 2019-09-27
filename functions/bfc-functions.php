@@ -182,14 +182,6 @@ function bfc_top_nav_menu_builder() {
 			'link_url' => '/blog/',
 			'icon_url' => '/wp-content/themes/bfcom/assets/images/blog.svg',
 			'text' => 'Blog'
-		),
-		array (
-			'id' => 'bfc-topnav-search',
-			'classes' => 'search menu-item-type-post_type menu-item-object-page',
-			'parent_nav' => 'search',
-			'link_url' => '/activity/',
-			'icon_url' => '/wp-content/themes/bfcom/assets/images/search.svg',
-			'text' => 'Search'
 		)
 	);
 	return $menuitemarray;
@@ -226,6 +218,9 @@ function bfc_top_nav() {
 
 		$topnav .= $thismenuitem;
 	}
+	//Add Search button to ul
+	$topnav .= '<li id="bfc-topnav-search" class="search menu-item-type-post_type menu-item-object-page" role="menuitem" data-toggle="search-dropdown" <p><img src="/wp-content/themes/bfcom/assets/images/search.svg" alt="Trial Search Box"/>Search</p>  </li>';
+
 	$topnav .= '</ul>';
 
 	echo $topnav;
